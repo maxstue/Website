@@ -1,4 +1,6 @@
-# Typescript Starter for Gridsome
+# Mein Portfolio
+
+## Typescript Starter for Gridsome
 
 This is a starter template for Gridsome using Typescript. It uses **wotan** for command line code analisys and **tslint** for integration with vscode. In order to work with Visual Studio Code, you'll need to install **TSLint** and **TSLint Vue** extensions for the editor.
 
@@ -38,3 +40,17 @@ Click in the links above to install it, or follow the steps below:
 * [Fimbullinter/wotan docs](https://github.com/fimbullinter/wotan)
 * [TSLint extension for vscode](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
 * [TSLint Vue extension for vscode](https://marketplace.visualstudio.com/items?itemName=prograhammer.tslint-vue)
+
+### 6. Deploy
+
+- Zeit now
+
+dev - prod :    "now"
+
+- Netlify
+sollte eigentlich mit jedem push auf master auch deployen
+
+dev :           "netlify deploy"
+prod :          "netlify deploy --prod"
+
+wenn ein fehler auftaucht von wegen "id fehlt " dann befehl wiederholen

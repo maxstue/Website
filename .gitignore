@@ -47,8 +47,9 @@ jspm_packages/
 # cache directory
 .cache
 
-# Serverless directories
+# Tools directories
 .serverless
+.netlify
 
 # IDE
 .idea

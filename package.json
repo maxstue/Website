@@ -8,7 +8,8 @@
     "explore": "gridsome explore",
     "lint:check": "wotan -p .",
     "lint:fix": "wotan --fix -p .",
-    "now-build": "npm run build"
+    "now-build": "npm run build",
+    "deploy": "gridsome build && netlify deploy --prod"
   },
   "dependencies": {
     "gridsome": "^0.5.0",
