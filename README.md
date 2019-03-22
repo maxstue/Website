@@ -1,6 +1,14 @@
 # Mein Portfolio
 
-## Typescript Starter for Gridsome
+Es benutzt das Typescript Starter Gridsome Paket als template 
+
+Und ist im Moment auf netlify und now deployed
+
+-> Repo klonen
+-> Installation von 1. - 5. durchführen 
+-> Und um zu Deployen 6. zwischen now und netlify aussuchen
+
+### Typescript Starter for Gridsome
 
 This is a starter template for Gridsome using Typescript. It uses **wotan** for command line code analisys and **tslint** for integration with vscode. In order to work with Visual Studio Code, you'll need to install **TSLint** and **TSLint Vue** extensions for the editor.
 
@@ -11,9 +19,7 @@ This is a starter template for Gridsome using Typescript. It uses **wotan** for 
 ### 2. Create a Gridsome project
 
 1. `gridsome create gridsome-ts https://github.com/cleitonper/gridsome-starter-typescript.git` to install this typescript starter
-2. `cd gridsome-ts` to open folder
 3. `gridsome develop` to start local dev server at `http://localhost:8080`
-4. happy coding 🎉🙌
 
 ### 3. Static Code Analysis - Command Line
 
