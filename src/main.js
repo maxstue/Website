@@ -7,6 +7,8 @@
  * Global css imports
  */
 import '~/assets/css/global.css';
+import '~/assets/css/main.css';
+import '~/assets/css/noscript.css';
 
 /**
  * Layout imports

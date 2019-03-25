@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "gridsome": "^0.5.0",
+    "vue-parallaxy": "^1.1.1",
     "vue-property-decorator": "^7.3.0"
   },
   "devDependencies": {
