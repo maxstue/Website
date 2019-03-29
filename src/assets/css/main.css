@@ -1,5 +1,7 @@
-/* @import url("font-awesome.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic"); */
+
+@import url("font-awesome.min.css");
+@import url("all.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
@@ -2250,7 +2252,6 @@ input, select, textarea {
 		}
 
 /* Icon */
-
 	.icon {
 		text-decoration: none;
 		border-bottom: none;
@@ -2266,9 +2267,9 @@ input, select, textarea {
 			text-transform: none !important;
 		}
 
-		/* .icon > .label {
+		.icon > .label {
 			display: none;
-		} */
+		}
 
 		.icon.style1:before {
 			color: #c3e895;
@@ -2316,6 +2317,19 @@ input, select, textarea {
 				line-height: 1em;
 			}
 
+			.dotnet {
+				background-image: url("../css/images/Csharp_Logo.png");
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				transform: rotate(-45deg)
+			}
+			.vue {
+				background-image: url("../css/images/vuejs_logo.png");
+				background-size: 120px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
 /* Image */
 
 	.image {
@@ -2877,7 +2891,6 @@ input, select, textarea {
 			}
 
 /* Header */
-
 		#header header.major:after {
 			background: #ffffff;
 		}
@@ -3229,6 +3242,7 @@ input, select, textarea {
 			#header {
 				padding: 8em 3em 8em 3em ;
 			}
+			
 
 		/* Footer */
 

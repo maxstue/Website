@@ -2,19 +2,20 @@
   <div class="is-preload">
     <!-- Header -->
 			<div id="header">
-        <div class="headerrow">
+        <nav class="headerrow">
           <strong id="symbol">
             <g-link to="/">MS</g-link>
           </strong>
-          <nav>
-            <ul>
+            <ul class="navUl">
               <li><a><g-link to="/">Home</g-link></a></li>
               <li><a><g-link to="/projects">Projects</g-link></a></li>
               <li><a><g-link to="/blog">Blog</g-link></a></li>
               <li><a><g-link to="/about">About me</g-link></a></li>
             </ul>
-          </nav>
-        </div>
+            <div class="burger">
+              <i class="fas fa-bars"></i>
+            </div>
+        </nav>
 			</div>
     <transition name="fade" appear>
       <main>
@@ -24,12 +25,13 @@
     <!-- Footer -->
 			<section id="footer">
 				<ul class="icons">
-					<li><a href="https://github.com/lTimeless" class="icon fa-github"><span class="label">GitHub</span></a></li>
-          <li><a href="https://gitlab.com/Imaximilian?nav_source=navbar" class="icon alt fa-github"><span class="label">GitLab</span></a></li>
-					<li><a href="mail:maximilian.stuempfl@t-online.de" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
+          <li><a href="https://github.com/lTimeless" target="_blank" class="icon"><i class="fab fa-github"></i></a></li>
+          <li><a href="https://gitlab.com/Imaximilian?nav_source=navbar" target="_blank" class="icon"><i class="fab fa-gitlab"></i></a></li>
+          <li><a href="mailto:maximilian.stuempfl@t-online.de" target="_blank" class="icon"><i class="fas fa-envelope"></i></a></li>
 				</ul>
 				<ul class="copyright">
 					<li>&copy; Maximilian Stümpfl</li>
+          <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
 				</ul>
 			</section>
   </div>
@@ -42,6 +44,18 @@
   export default class HomePage extends Vue {
     public title = 'Hello I am Maximilian Stümpfl';
     // Todo: das der title so getypped auftaucht
+
+    public navSlide(){
+      const burger = document.querySelector('.burger');
+      const nav = document.querySelector('.navUl');
+
+      if (burger == null || nav == null) {
+        return;
+      }
+      burger.addEventListener('click', () => {
+        nav.classList.toggle('nav-active');
+      });
+    }
   }
 </script>
 
@@ -54,7 +68,7 @@
   }
 </static-query>
 
-<style>
+<style scoped>
   .layout {
     margin: 0 auto;
     padding-left: 20px;
@@ -73,25 +87,12 @@
 		text-align: center;
   }
 
-  #header strong {
-    color:  inherit;
-  }
   #header #symbol {
     font-size: 40px;
+    letter-spacing: 1vh;
+    color: inherit;
   }
 
-  #header .nav {
-    font-size: 24px;
-  }
-  
-  .headerrow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 150px;
-    width: 75em;
-  }
-  
   .fade-enter-active {
     transition: opacity .5s;
   }
@@ -100,19 +101,68 @@
     opacity: 0;
   }
 
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navUl {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+  }
+
   li {
-    margin: 20px;
+    /* margin: 20px; */
     font-size: 24px;
     list-style: none;
     display: inline-block;
   }
 
-  nav:hover a {
+  .navUl:hover a {
     opacity: .5;
   }
 
-  nav li a:hover {
+  .navUl li a:hover {
     opacity: 1;
+  }
+
+/* burger menu für mobile view */
+  .burger {
+    display: none;
+
+  }
+
+  .nav-active {
+    transform: translateX(0%);
+  }
+
+  @media screen and (max-width: 1000px){
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .navUl {
+      position: relative;
+      right: 0px;
+      height: 2vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in;
+    }
+
+    .navUl li {
+      opacity: 0;
+    }
+
+    .burger {
+      display: block;
+    }
+    
   }
   
 </style>

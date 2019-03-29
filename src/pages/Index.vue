@@ -41,12 +41,11 @@
 					<div class="row gtr-150">
 						<div class="col-6 col-12-medium">
 							<ul class="major-icons">
-								<li><span class="icon style1 major fa-code"></span></li>
-								<li><span class="icon style2 major fa-bolt"></span></li>
-								<li><span class="icon style3 major fa-camera-retro"></span></li>
-								<li><span class="icon style4 major fa-cog"></span></li>
+								<!-- TODO: turn these pics so they are straight or replace it with some pics -->
+								<li><span class="icon style1 major fas fa-code"></span></li>
+								<li><span class="icon style2 major dotnet"></span></li>
+								<li><span class="icon style4 major vue"></span></li>
 								<li><span class="icon style5 major fa-desktop"></span></li>
-								<li><span class="icon style6 major fa-calendar"></span></li>
 							</ul>
 						</div>
 						<div class="col-6 col-12-medium">
