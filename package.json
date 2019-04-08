@@ -18,6 +18,7 @@
     "gridsome": "^0.5.0",
     "i": "^0.3.6",
     "npm": "^6.9.0",
+    "vue-burger-menu": "^2.0.1",
     "vue-parallaxy": "^1.1.1",
     "vue-property-decorator": "^7.3.0"
   },
@@ -26,6 +27,7 @@
     "@fimbul/ve": "^0.18.0",
     "@fimbul/wotan": "0.19.0",
     "@fortawesome/fontawesome-free": "^5.8.1",
+    "@types/node": "^11.13.0",
     "gridsome-plugin-typescript": "0.0.3",
     "tslint": "^5.13.0",
     "typescript": "^3.3.0"

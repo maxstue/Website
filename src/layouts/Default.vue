@@ -12,11 +12,29 @@
               <li><a><g-link to="/blog">Blog</g-link></a></li>
               <li><a><g-link to="/about">About me</g-link></a></li>
             </ul>
-            <div class="burger">
-              <i class="fas fa-bars"></i>
+
+            <div class="menu-wrap">
+              <input type="checkbox" class="toggler">
+              <div class="hamburger"> 
+                <i class="fas fa-bars"></i>
+                <div></div> 
+              </div>
+              <div class="menu" >
+                <div>
+                  <div>
+                    <ul class="navUl">
+                      <li><a><g-link to="/">Home</g-link></a></li>
+                      <li><a><g-link to="/projects">Projects</g-link></a></li>
+                      <li><a><g-link to="/blog">Blog</g-link></a></li>
+                      <li><a><g-link to="/about">About me</g-link></a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
         </nav>
 			</div>
+      <!-- Body -->
     <transition name="fade" appear>
       <main>
         <slot />
@@ -27,6 +45,7 @@
 				<ul class="icons">
           <li><a href="https://github.com/lTimeless" target="_blank" class="icon"><i class="fab fa-github"></i></a></li>
           <li><a href="https://gitlab.com/Imaximilian?nav_source=navbar" target="_blank" class="icon"><i class="fab fa-gitlab"></i></a></li>
+          <li><a href="https://www.xing.com/profile/Maximilian_Stuempfl/cv?sc_o=mxb_p" target="_blank" class="icon"><i class="fab fa-xing"></i></a></li>
           <li><a href="mailto:maximilian.stuempfl@t-online.de" target="_blank" class="icon"><i class="fas fa-envelope"></i></a></li>
 				</ul>
 				<ul class="copyright">
@@ -40,22 +59,10 @@
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
 
-  @Component
+  @Component({})
   export default class HomePage extends Vue {
     public title = 'Hello I am Maximilian Stümpfl';
     // Todo: das der title so getypped auftaucht
-
-    public navSlide(){
-      const burger = document.querySelector('.burger');
-      const nav = document.querySelector('.navUl');
-
-      if (burger == null || nav == null) {
-        return;
-      }
-      burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
-      });
-    }
   }
 </script>
 
@@ -145,18 +152,7 @@
     }
 
     .navUl {
-      position: relative;
-      right: 0px;
-      height: 2vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      transform: translateX(100%);
-      transition: transform 0.5s ease-in;
-    }
-
-    .navUl li {
-      opacity: 0;
+      display: none;
     }
 
     .burger {
