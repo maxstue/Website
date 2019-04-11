@@ -1,6 +1,10 @@
 <template>
+
   <div class="is-preload">
     <!-- Header -->
+    <head>
+     <!-- <link rel="stylesheet" href="src/assets/css/main.css"> -->
+    </head>
 			<div id="header">
         <nav class="headerrow">
           <strong id="symbol">

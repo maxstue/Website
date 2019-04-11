@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "gridsome build",
-    "develop": "gridsome develop",
+    "dev": "gridsome develop",
     "explore": "gridsome explore",
     "lint:check": "wotan -p .",
     "lint:fix": "wotan --fix -p .",

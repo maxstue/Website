@@ -1,6 +1,7 @@
 
 @import url("font-awesome.min.css");
-@import url("all.css");
+/*@import url("all.css");*/
+@import url("https://use.fontawesome.com/releases/v5.8.1/css/all.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
 html, body, div, span, applet, object,
@@ -2806,7 +2807,7 @@ input, select, textarea {
 			background-color: #333;
 			color: rgba(255, 255, 255, 0.75);
 			background-attachment: fixed,							fixed;
-			background-image: url("images/overlay1.png"), url("D:/Max/Dokumente/_Private-Projekte/portfolio/src/assets/images/header.jpg");
+			background-image: url("images/overlay1.png"), url("/src/assets/images/header.jpg");
 			background-size: auto,							cover;
 		}
 

@@ -1,5 +1,8 @@
 <template>
   <Layout>
+		 <head>
+      <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+    </head>
     <!-- <g-image class="image" alt="Gridsome" src="~/assets/favicon.png" width="135" />
 
     <h1 class="title">{{ title }}</h1>
@@ -29,7 +32,7 @@
 							<p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
 						</div>
 						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="../assets/images/pic01.jpg" alt="" /></span>
+							<span class="image fit"><img src="../assets/css/images/pic01.jpg" alt="" /></span>
 						</div>
 					</div>
 				</div>
@@ -43,8 +46,8 @@
 							<ul class="major-icons">
 								<!-- TODO: turn these pics so they are straight or replace it with some pics -->
 								<li><span class="icon style1 major fas fa-code"></span></li>
-								<li><span class="icon style2 major dotnet"></span></li>
-								<li><span class="icon style4 major vue"></span></li>
+								<li><span class="icon style2 major fab fa-code-branch"></span></li>
+								<li><span class="icon style4 major fab fa-bolt"></span></li>
 								<li><span class="icon style5 major fa-desktop"></span></li>
 							</ul>
 						</div>
@@ -70,7 +73,15 @@
 					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
 					<div class="row gtr-150">
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="../assets/images/pic02.jpg" alt="" /></span>
+							<span class="image fit"><img src="../assets/css/images/pic02.jpg" alt="" /></span>
+							<h3>Magna feugiat TEST</h3>
+							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
+							<ul class="actions special">
+								<li><a class="button"><g-link to="/detail">Projects</g-link></a></li>
+							</ul>
+						</div>
+						<div class="col-4 col-12-medium">
+							<span class="image fit"><img src="../assets/css/images/pic03.jpg" alt="" /></span>
 							<h3>Magna feugiat lorem</h3>
 							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<ul class="actions special">
@@ -78,15 +89,7 @@
 							</ul>
 						</div>
 						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="../assets/images/pic03.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="../assets/images/pic04.jpg" alt="" /></span>
+							<span class="image fit"><img src="../assets/css/images/pic04.jpg" alt="" /></span>
 							<h3>Magna feugiat lorem</h3>
 							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
 							<ul class="actions special">
