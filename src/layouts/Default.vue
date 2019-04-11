@@ -6,36 +6,35 @@
      <!-- <link rel="stylesheet" href="src/assets/css/main.css"> -->
     </head>
 			<div id="header">
-        <nav class="headerrow">
+        <nav>
           <strong id="symbol">
             <g-link to="/">MS</g-link>
           </strong>
-            <ul class="navUl">
-              <li><a><g-link to="/">Home</g-link></a></li>
-              <li><a><g-link to="/projects">Projects</g-link></a></li>
-              <li><a><g-link to="/blog">Blog</g-link></a></li>
-              <li><a><g-link to="/about">About me</g-link></a></li>
-            </ul>
-
-            <div class="menu-wrap">
-              <input type="checkbox" class="toggler">
-              <div class="hamburger"> 
-                <i class="fas fa-bars"></i>
-                <div></div> 
-              </div>
-              <div class="menu" >
+          <ul class="mainbar navUl">
+            <li><a><g-link to="/">Home</g-link></a></li>
+            <li><a><g-link to="/projects">Projects</g-link></a></li>
+            <li><a><g-link to="/blog">Blog</g-link></a></li>
+            <li><a><g-link to="/about">About me</g-link></a></li>
+          </ul>
+          <div class="menu-wrap">
+            <input type="checkbox" class="toggler">
+            <div class="hamburger">
+              <i class="fas fa-bars"></i>
+              <div></div>
+            </div>
+            <div class="menu" >
+              <div>
                 <div>
-                  <div>
-                    <ul class="navUl">
-                      <li><a><g-link to="/">Home</g-link></a></li>
-                      <li><a><g-link to="/projects">Projects</g-link></a></li>
-                      <li><a><g-link to="/blog">Blog</g-link></a></li>
-                      <li><a><g-link to="/about">About me</g-link></a></li>
-                    </ul>
-                  </div>
+                  <ul class="mainbar navBurger">
+                    <li><a><g-link to="/">Home</g-link></a></li>
+                    <li><a><g-link to="/projects">Projects</g-link></a></li>
+                    <li><a><g-link to="/blog">Blog</g-link></a></li>
+                    <li><a><g-link to="/about">About me</g-link></a></li>
+                  </ul>
                 </div>
               </div>
             </div>
+          </div>
         </nav>
 			</div>
       <!-- Body -->
@@ -80,11 +79,7 @@
 </static-query>
 
 <style scoped>
-  .layout {
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+
   #header {
 		padding: 4em 0 8em 0 ;
 		background-color: #4686a0;
@@ -93,76 +88,71 @@
 		background-image: url("../assets/css/images/overlay2.png"), url("../assets/css/images//overlay3.svg"), linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
 		background-position: top left,						center center,					center center;
 		background-size: auto,							cover,							cover;
-		overflow: hidden;
-		position: relative;
-		text-align: center;
+    text-align: center;
   }
 
-  #header #symbol {
+  #symbol {
     font-size: 40px;
     letter-spacing: 1vh;
     color: inherit;
-  }
-
-  .fade-enter-active {
-    transition: opacity .5s;
-  }
-
-  .fade-enter {
-    opacity: 0;
+    margin: 0 0 0 1em;
   }
 
   nav {
     display: flex;
     justify-content: space-around;
-    align-items: center;
   }
 
-  .navUl {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
+  ul {
+		padding-left: 1em;
   }
 
-  li {
-    /* margin: 20px; */
+  ul li {
+    padding-left: 2em;
     font-size: 24px;
     list-style: none;
     display: inline-block;
   }
 
-  .navUl:hover a {
+  .navUl {
+    position: relative;
+    display: flex;
+    margin: 0 1em 0 0;
+  }
+
+  .mainbar:hover a {
     opacity: .5;
   }
-
-  .navUl li a:hover {
-    opacity: 1;
-  }
+    .mainbar li a:hover {
+      opacity: 1;
+    }
 
 /* burger menu für mobile view */
-  .burger {
+  .menu-wrap {
     display: none;
-
   }
 
-  .nav-active {
-    transform: translateX(0%);
-  }
-
-  @media screen and (max-width: 1000px){
+  @media screen and (max-width: 850px){
 
     body {
       overflow-x: hidden;
     }
 
+    .menu-wrap {
+      display: flex;
+      position: relative;
+      margin: 0 3em 0 60%;
+    }
+
     .navUl {
+      display: none !important;
+    }
+
+    .navBurger {
       display: none;
     }
 
-    .burger {
-      display: block;
-    }
-    
+
   }
-  
+
 </style>
