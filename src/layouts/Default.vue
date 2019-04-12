@@ -11,21 +11,21 @@
             <g-link to="/">MS</g-link>
           </strong>
           <ul class="mainbar navUl">
-            <li><a><g-link to="/">Home</g-link></a></li>
-            <li><a><g-link to="/projects">Projects</g-link></a></li>
-            <li><a><g-link to="/blog">Blog</g-link></a></li>
-            <li><a><g-link to="/about">About me</g-link></a></li>
+            <li class="li"><a><g-link to="/">Home</g-link></a></li>
+            <li class="li"><a><g-link to="/projects">Projects</g-link></a></li>
+            <li class="li"><a><g-link to="/blog">Blog</g-link></a></li>
+            <li class="li"><a><g-link to="/about">About me</g-link></a></li>
           </ul>
           <div class="menu-wrap">
             <input type="checkbox" class="toggler">
             <div class="hamburger">
-              <i class="fas fa-bars"></i>
+              <!-- <i class="fas fa-bars"></i> -->
               <div></div>
             </div>
             <div class="menu" >
               <div>
                 <div>
-                  <ul class="mainbar navBurger">
+                  <ul>
                     <li><a><g-link to="/">Home</g-link></a></li>
                     <li><a><g-link to="/projects">Projects</g-link></a></li>
                     <li><a><g-link to="/blog">Blog</g-link></a></li>
@@ -80,6 +80,12 @@
 
 <style scoped>
 
+  :root {
+    --menu-speed: 0.75s;
+    --primary-color: rgba(243, 120, 20);
+    --overlay-color: rgba(2, 139, 252, 0.63);
+  }
+
   #header {
 		padding: 4em 0 8em 0 ;
 		background-color: #4686a0;
@@ -103,11 +109,11 @@
     justify-content: space-around;
   }
 
-  ul {
+  .mainbar {
 		padding-left: 1em;
   }
 
-  ul li {
+  .mainbar .li {
     padding-left: 2em;
     font-size: 24px;
     list-style: none;
@@ -131,25 +137,146 @@
   .menu-wrap {
     display: none;
   }
+    
+    .menu-wrap .toggler {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      cursor: pointer;
+      width: 50px;
+      height: 50px;
+      opacity: 0;
+    }
+
+    .menu-wrap .hamburger {
+      top: 0;
+      left: 0;
+      z-index: 1;
+      width: 60px;
+      height: 60px;
+      padding: 1rem;
+      background: var(--primary-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Hamburger lines */
+    .menu-wrap .hamburger > div {
+      position: relative;
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+    }
+    /* top and bottom line  */
+    .menu-wrap .hamburger > div:before,
+    .menu-wrap .hamburger > div:after {
+      content: '';
+      position: absolute;
+      z-index: 1;
+      top: -10px;
+      width: 100%;
+      height: 2px;
+      background-color: inherit;
+    }
+    /* moves bottom line down */
+    .menu-wrap .hamburger > div:after {
+      top: 10px;
+    }
+    /*  Toggler animate */
+    .menu-wrap .toggler:checked + .hamburger > div {
+      transform: rotate(135deg);
+    }
+
+    /* turn lines into X */
+    .menu-wrap .toggler:checked + .hamburger > div:before,
+    .menu-wrap .toggler:checked + .hamburger > div:after {
+      top: 0;
+      transform: rotate(90deg);
+    }
+
+    /* rotate on hover */
+    .menu-wrap .toggler:checked:hover + .hamburger > div {
+      transform: rotate(225deg);
+    }
+
+    /* show menu */
+    .menu-wrap .toggler:checked ~.menu {
+      visibility: visible;
+    }
+
+    .menu-wrap .toggler:checked ~.menu > div {
+      transform: scale(1);
+      transition-duration: var(--menu-speed);
+    }
+    .menu-wrap .toggler:checked ~.menu > div > {
+      opacity: 1;
+      transition: opacity 0.4s ease;
+    }
+
+    .menu-wrap .menu {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      visibility: hidden; 
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-wrap .menu > div {
+      background: rgba(0, 0, 0, 0.568);
+      border-radius: 50%;
+      width: 200vw;
+      height: 200vw;
+      display: flex;
+      flex: none;
+      align-items: center;
+      justify-content: center;
+      transform: scale(0);
+      transition: all 0.4s ease;
+    }
+
+    .menu-wrap .menu > div > div {
+      text-align: center;
+      max-width: 90vw;
+      max-height: 100vh;
+      /* opacity: 0; */
+      transition: opacity 0.4s ease;
+    }
+
+    .menu-wrap .menu > div > div > ul > li {
+      list-style: none;
+      color: white;
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+
+    .menu-wrap .menu > div > div > ul > li > a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.4s ease;
+    }
 
   @media screen and (max-width: 850px){
 
-    body {
-      overflow-x: hidden;
+    .navUl {
+      display: none !important;
     }
 
     .menu-wrap {
       display: flex;
       position: relative;
       margin: 0 3em 0 60%;
-    }
-
-    .navUl {
-      display: none !important;
-    }
-
-    .navBurger {
-      display: none;
+      transition: all 0.4s ease;
     }
 
 
