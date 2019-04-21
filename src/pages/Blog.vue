@@ -8,15 +8,22 @@
           <div class="row gtr-150">
             <div class="col-6 col-12-medium">
               <header class="major">
-                <h2 id="blogTitle">{{ edge.node.title }}</h2>
+                <g-link :to="edge.node.path">
+                  <h2 id="blogTitle">{{ edge.node.title }}</h2>
+                </g-link>
               </header>
               <div v-html="edge.node.content" />
             </div>
-            <div class="col-6 col-12-medium imp-medium">
-              <span class="image fit">
-                <img src="../assets/css/images/pic01.jpg" alt>
-              </span>
-            </div>
+            
+              <div class="col-6 col-12-medium imp-medium">
+                <span class="image fit">
+                  <g-link :to="edge.node.path">
+                  <img src="../assets/css/images/pic01.jpg" alt>
+                  </g-link>
+                </span>
+                <span> {{edge.node.date}}</span>
+              </div>
+            
           </div>
         </div>
       </div>
@@ -27,12 +34,14 @@
 
 <page-query>
 query Post {
-  posts: allPost {
+  posts: allPost (sortBy:"date", order: ASC) {
     edges {
       node {
         id
         title
         content
+        date
+        path
       }
     }
   }
