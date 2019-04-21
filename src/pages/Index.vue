@@ -3,23 +3,6 @@
 		 <head>
       <!--<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
     </head>
-    <!-- <g-image class="image" alt="Gridsome" src="~/assets/favicon.png" width="135" />
-
-    <h1 class="title">{{ title }}</h1>
-
-    <p>
-      This is a starter template for Gridsome using Typescript.
-      It uses <strong>wotan</strong> for command line code analisys
-      and <strong>tslint</strong> for integration with vscode.
-      In order to work with Visual Studio Code, you'll need to install
-      <strong>TSLint</strong> and <strong>TSLint Vue</strong>
-      extensions for the editor.
-    </p>
-
-    <p class="home-links">
-      <a href="https://gridsome.org/docs" target="_blank" rel="noopener">Gridsome Docs</a>
-      <a href="https://github.com/gridsome/gridsome" target="_blank" rel="noopener">GitHub</a>
-    </p> -->
 <!-- One -->
 			<section id="one" class="main style1">
 				<div class="container">

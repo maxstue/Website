@@ -65,7 +65,7 @@
   @Component({})
   export default class HomePage extends Vue {
     public title = 'Hello I am Maximilian Stümpfl';
-    // Todo: das der title so getypped auftaucht
+    // TODO: das der title so getypped auftaucht
   }
 </script>
 
