@@ -44,8 +44,6 @@
 					<div class="row gtr-150">
 						<div class="col-6 col-12-medium rel">
 							<ul class="major-icons">
-								<!-- TODO: turn these pics so they are straight or replace it with some pics -->
-								<!-- FIXME:  -->
 								<li><span class="icon style1 major fas fa-code"></span></li>
 								<li><span class="icon style2 major fab fa-code-branch"></span></li>
 								<li><span class="icon style4 major fab fa-bolt"></span></li>
