@@ -20,6 +20,7 @@ module.exports = {
         path: 'blog/**/*.md',
         typeName: 'Post',
         route: '/blog/:slug',
+
       }
     },
     {

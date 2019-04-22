@@ -1,13 +1,13 @@
 <template>
-  <Layout :title="$page.post.title">
+  <Layout>
     <div id="one" class="main style1">
         <div class="container">
             <div class="row gtr-150">
                 <div class="col-6 col-12-medium">
                     <header class="major">
-                        <h2>{{$page.post.title}}</h2>
+                        <h2>{{ $static.post.title }}</h2>
                     </header>
-                    <div v-html="$page.post.content"/>
+                    <div v-html="$static.post.content"/>
                 </div>
                 <div class="col-6 col-12-medium imp-medium">
                     <span class="image fit"><img src="../assets/css/images/pic01.jpg" alt="" /></span>
@@ -15,31 +15,30 @@
             </div>
         </div>
     </div>
-
-
-
   </Layout>
 </template>
 
-<page-query>
-query Post ($path: String!) {
-  post (path: $path) {
+
+<static-query>
+query Post {
+  post: post (path: "/blog/this-is-a-test-about-me-page") {
     title
     content
+    path
+    date
+    slug
   }
 }
-</page-query>
-
+</static-query>
 
 <script lang="ts">
-  import Vue from "vue";
+  import { Component, Vue } from 'vue-property-decorator';
 
-  export default Vue.extend({
-      
-      
-  });
+  @Component
+  export default class About extends Vue {
+    public title = 'About';
+  }
 </script>
-
 <style>
   .title {
     text-align: center;

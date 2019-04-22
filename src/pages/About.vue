@@ -1,14 +1,18 @@
 <template>
-  <Layout>
-    <h1 class="title">{{ title }}</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error doloremque omnis animi, eligendi magni a voluptatum, vitae, consequuntur rerum illum odit fugit assumenda rem dolores inventore iste reprehenderit maxime! Iusto.</p>
-  </Layout>
+  <AboutMe />
 </template>
+
+
 
 <script lang="ts">
   import { Component, Vue } from 'vue-property-decorator';
+  import AboutMe from '~/components/AboutMe.vue';
 
-  @Component
+  @Component({
+    components: {
+      AboutMe
+    }
+  })
   export default class About extends Vue {
     public title = 'About';
   }

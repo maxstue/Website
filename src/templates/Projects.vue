@@ -34,7 +34,7 @@
 
 <page-query>
 query Post {
-  posts: allPost (sortBy:"date", order: ASC, filter: {fileInfo: {directory: {regex: "blog/blog"}}}) {
+  posts: allPost (sortBy:"date", order: ASC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
     edges {
       node {
         id
