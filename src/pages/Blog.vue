@@ -18,7 +18,7 @@
               <div class="col-6 col-12-medium imp-medium">
                 <span class="image fit">
                   <g-link :to="edge.node.path">
-                  <img src="../assets/css/images/pic01.jpg" alt>
+                    <img src="../assets/css/images/pic01.jpg" alt>
                   </g-link>
                 </span>
                 <span> {{edge.node.date}}</span>
