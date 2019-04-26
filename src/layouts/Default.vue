@@ -59,14 +59,14 @@
   </div>
 </template>
 
-<script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-
-  @Component({})
-  export default class HomePage extends Vue {
-    public title = 'Hello I am Maximilian Stümpfl';
-    // TODO: das der title so getypped auftaucht
+<script >
+export default {
+  metaInfo: {
+    title: 'Default layout'
   }
+  
+}
+
 </script>
 
 

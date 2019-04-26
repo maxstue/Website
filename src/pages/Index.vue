@@ -116,52 +116,111 @@ query Peoject {
 }
 </page-query>
 
-<script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
-  import axios from "axios";
 
-  @Component
-  export default class HomePage extends Vue {
-    public title = "This is my Test Portfolio";
-    private blog = [];
-
-    mounted() {
-      console.log("home mounted");
-
-      let result = axios({
-        method: "POST",
-        url: "/___graphql",
-        data: {
-          query: `
-							{
-								allPost(sortBy: "date", order: ASC) {
-									edges {
-										node {
-											title
-											id
-											path
-											date
-											featuredImage
-											fileInfo {
-												directory
-											}
-										}
-									}
-								}
-							}
-						`
-        }
-      })
-        .then(response => {
-          console.log(response);
-					this.blog = response.data.data.allPost.edges;
-					console.log(this.blog);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
+<script>
+import axios from "axios";
+export default {
+  metaInfo: {
+    title: 'Hello I am Maximilian Stümpfl'
+  },
+  data() {
+    return{
+      title: 'Hello I am Maximilian Stümpfl',
+      blog: []
+    }    
+  },
+  mounted() {
+    console.log("home mounted");
+      // let result = axios({
+      //   method: "POST",
+      //   url: "/___graphql",
+      //   data: {
+      //     query: `
+			// 				{
+			// 					allPost(sortBy: "date", order: ASC) {
+			// 						edges {
+			// 							node {
+			// 								title
+			// 								id
+			// 								path
+			// 								date
+			// 								featuredImage
+			// 								fileInfo {
+			// 									directory
+			// 								}
+			// 							}
+			// 						}
+			// 					}
+			// 				}
+			// 			`
+      //   }
+      // })
+      //   .then(response => {
+      //     console.log(response);
+			// 		this.blog = response.data.data.allPost.edges;
+			// 		console.log(this.blog);
+      //   })
+      //   .catch(error => {
+      //     console.log(error);
+      //   });
   }
+  
+}
+
+
+  // import { Component, Vue } from "vue-property-decorator";
+  // import axios from "axios";
+
+  // @Component
+  // export default class HomePage extends Vue {
+  //   public title = "This is my Test Portfolio";
+
+
+   
+
+    // private blog = [];
+
+    // mounted() {
+    //   console.log("home mounted");
+
+    //   let result = axios({
+    //     method: "POST",
+    //     url: "/___graphql",
+    //     data: {
+    //       query: `
+		// 					{
+		// 						allPost(sortBy: "date", order: ASC) {
+		// 							edges {
+		// 								node {
+		// 									title
+		// 									id
+		// 									path
+		// 									date
+		// 									featuredImage
+		// 									fileInfo {
+		// 										directory
+		// 									}
+		// 								}
+		// 							}
+		// 						}
+		// 					}
+		// 				`
+    //     }
+    //   })
+    //     .then(response => {
+    //       console.log(response);
+		// 			this.blog = response.data.data.allPost.edges;
+		// 			console.log(this.blog);
+    //     })
+    //     .catch(error => {
+    //       console.log(error);
+    //     });
+    // }
+
+
+
+//     
+  // }
 </script>
 
 <style scoped>

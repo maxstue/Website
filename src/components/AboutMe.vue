@@ -31,13 +31,22 @@ query Post {
 }
 </static-query>
 
-<script lang="ts">
-  import { Component, Vue } from 'vue-property-decorator';
-
-  @Component
-  export default class About extends Vue {
-    public title = 'About';
+<script>
+import Layout from '~/layouts/Default.vue'
+export default {
+  components: {
+    Layout
+  },
+  metaInfo: {
+    title: 'aboutme'
   }
+}
+  // import { Component, Vue } from 'vue-property-decorator';
+
+  // @Component
+  // export default class About extends Vue {
+  //   public title = 'About';
+  // }
 </script>
 <style>
   .title {

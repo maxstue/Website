@@ -31,13 +31,25 @@ query Post ($path: String!) {
 </page-query>
 
 
-<script lang="ts">
-  import Vue from "vue";
+<script>
+import Layout from '~/layouts/Default.vue'
+export default {
+  components: {
+    Layout
+  },
+  metaInfo: {
+    title: 'project'
+  },
+  mounted(){
+    console.log("projekt mounted");
+  }
+}
+  // import { Component, Vue } from 'vue-property-decorator';
 
-  export default Vue.extend({
-      
-      
-  });
+  // @Component
+  // export default class About extends Vue {
+  //   public title = 'About';
+  // }
 </script>
 
 <style>

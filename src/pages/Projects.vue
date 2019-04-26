@@ -55,12 +55,29 @@ query Post {
 </page-query>
 
 <script lang="ts">
-  import { Component, Vue } from "vue-property-decorator";
-
-  @Component
-  export default class Projects extends Vue {
-    public title = "Projects";
+import Layout from '~/layouts/Default.vue'
+export default {
+  components: {
+    Layout
+  },
+  metaInfo: {
+    title: 'projects'
+  },
+  data: ()=> {
+    return{
+      title: 'Projects'
+    }    
+  },
+  mounted(){
+    console.log("projects mounted");
   }
+}
+  // import { Component, Vue } from "vue-property-decorator";
+
+  // @Component
+  // export default class Projects extends Vue {
+  //   public title = "Projects";
+  // }
 </script>
 
 <style scoped>

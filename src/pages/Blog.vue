@@ -52,7 +52,19 @@ query Post {
 </page-query>
 
 
-<script lang="ts">
+<script>
+import Layout from '~/layouts/Default.vue'
+export default {
+  components: {
+    Layout
+  },
+  metaInfo: {
+    title: 'Blog'
+  },
+  mounted(){
+    console.log("blog mounted");
+  }
+}
 </script>
 
 <style scoped>
