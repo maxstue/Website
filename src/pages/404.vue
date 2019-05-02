@@ -9,8 +9,7 @@
     <p>
         Error Code 404
     </p>
-
-    
+    <!-- TODO: hier fancy funny 404 page machen  -->
 
   </Layout>
 </template>
