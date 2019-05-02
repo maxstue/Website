@@ -12,7 +12,7 @@ export default function (Vue, { router, head, isClient }) {
   Vue.component('Layout', DefaultLayout)
 
   Sentry.init({ 
-    dsn: 'https://a236966bb8e8432ebad6bcf9d4522e87@sentry.io/1385594',
+    dsn: 'https://ee01ed30ae3d49438c89747d9d3b8d10@sentry.io/1448310',
     debug: true 
   });
 
