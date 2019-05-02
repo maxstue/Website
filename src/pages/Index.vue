@@ -114,6 +114,8 @@ query Peoject {
 </page-query>
 
 <script>
+import * as Sentry from '@sentry/browser';
+
 export default {
   metaInfo: {
     title: 'Home'
@@ -125,6 +127,7 @@ export default {
   },
   mounted() {
     console.log("home mounted");
+    Sentry.captureMessage('Home mounted test');
     
   }
 }
