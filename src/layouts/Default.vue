@@ -1,96 +1,96 @@
 <template>
-  <div class="wrapper">
-    <header id="header">
-      <div class="nav">
-        <nav>
-          <strong>
-            <g-link id="symbol" to="/">MS</g-link>
-          </strong>
-          <ul class="mainbar navUl">
-            <li class="nav__link">
-              <g-link to="/">Home</g-link>
-            </li>
-            <li class="nav__link">
-              <g-link to="/projects">Projects</g-link>
-            </li>
-            <li class="nav__link">
-              <g-link to="/blog">Blog</g-link>
-            </li>
-            <li class="nav__link">
-              <g-link to="/about">About me</g-link>
-            </li>
-          </ul>
-        </nav>
-        <div class="menu-wrap">
-          <input type="checkbox" class="toggler">
-          <div class="hamburger">
-            <!-- <i class="fas fa-bars"></i> -->
-            <div></div>
-          </div>
-          <div class="menu">
+<div class="wrapper">
+  <header id="header">
+    <div class="nav">
+      <nav>
+        <strong>
+          <g-link id="symbol" to="/">MS</g-link>
+        </strong>
+        <ul class="mainbar navUl">
+          <li class="nav__link">
+            <g-link to="/">Home</g-link>
+          </li>
+          <li class="nav__link">
+            <g-link to="/projects">Projects</g-link>
+          </li>
+          <li class="nav__link">
+            <g-link to="/blog">Blog</g-link>
+          </li>
+          <li class="nav__link">
+            <g-link to="/about">About me</g-link>
+          </li>
+        </ul>
+      </nav>
+      <div class="menu-wrap">
+        <input type="checkbox" class="toggler">
+        <div class="hamburger">
+          <!-- <i class="fas fa-bars"></i> -->
+          <div></div>
+        </div>
+        <div class="menu">
+          <div>
             <div>
-              <div>
-                <ul>
-                  <li>
-                    <g-link to="/">Home</g-link>
-                  </li>
-                  <li>
-                    <g-link to="/projects">Projects</g-link>
-                  </li>
-                  <li>
-                    <g-link to="/blog">Blog</g-link>
-                  </li>
-                  <li>
-                    <g-link to="/about">About me</g-link>
-                  </li>
-                </ul>
-              </div>
+              <ul>
+                <li>
+                  <g-link to="/">Home</g-link>
+                </li>
+                <li>
+                  <g-link to="/projects">Projects</g-link>
+                </li>
+                <li>
+                  <g-link to="/blog">Blog</g-link>
+                </li>
+                <li>
+                  <g-link to="/about">About me</g-link>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </header>
-    <!-- Body -->
-    <transition name="fade" appear>
-      <main class="content">
-        <slot/>
-      </main>
-    </transition>
+    </div>
+  </header>
+  <!-- Body -->
+  <transition name="fade" appear>
+    <main class="content">
+      <slot/>
+    </main>
+  </transition>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <ul class="icons">
-        <li>
-          <a href="https://github.com/lTimeless" target="_blank" class="icon">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://gitlab.com/Imaximilian?nav_source=navbar" target="_blank" class="icon">
-            <i class="fab fa-gitlab"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.xing.com/profile/Maximilian_Stuempfl/cv?sc_o=mxb_p"
-            target="_blank"
-            class="icon"
-          >
-            <i class="fab fa-xing"></i>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:maximilian.stuempfl@t-online.de" target="_blank" class="icon">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="copyright">
-        <li>&copy; Maximilian Stümpfl</li>
-        <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-      </ul>
-    </footer>
-  </div>
+  <!-- Footer -->
+  <footer id="footer">
+    <ul class="icons">
+      <li>
+        <a href="https://github.com/lTimeless" target="_blank" class="icon">
+          <i class="fab fa-github"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://gitlab.com/Imaximilian?nav_source=navbar" target="_blank" class="icon">
+          <i class="fab fa-gitlab"></i>
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.xing.com/profile/Maximilian_Stuempfl/cv?sc_o=mxb_p"
+          target="_blank"
+          class="icon"
+        >
+          <i class="fab fa-xing"></i>
+        </a>
+      </li>
+      <li>
+        <a href="mailto:maximilian.stuempfl@t-online.de" target="_blank" class="icon">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </li>
+    </ul>
+    <ul class="copyright">
+      <li>&copy; Maximilian Stümpfl</li>
+      <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+    </ul>
+  </footer>
+</div>
 </template>
 
 <static-query>
