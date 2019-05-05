@@ -71,26 +71,27 @@
         </header>
         <!-- <p class="title">These are all my bigger and showcaseable projects</p> -->
         <!-- every project  -->
+        <!-- TODO: zu cards machen mit leichter elevation -->
         <div class="row gtr-150">
           <div v-for="project in $page.projects.edges" :key="project.node.id">
             <div class="col-4 col-12-medium">
-              <span class="image resizePic">
-                <img
+              <!-- <span class="image resizePic"> -->
+                <g-image
                   class="image resizePic"
                   v-if="project.node.featuredImage"
                   :src="project.node.featuredImage"
-                  alt
-                >
+                  fit="contain"
+                />
                 <g-image class="image resizePic" v-else src="../assets/images/pic02.jpg" fit="contain"/>
-              </span>
+              <!-- </span> -->
               <h3 class="title">{{project.node.title}}</h3>
-              <ul class="actions special">
+              <!-- <ul class="actions special">
                 <li>
                   <a class="button">
                     <g-link :to="project.node.path">Go to</g-link>
                   </a>
                 </li>
-              </ul>
+              </ul> -->
             </div>
           </div>
         </div>

@@ -363,8 +363,13 @@ ul.major-icons li .icon:before {
 @media screen and (max-width: 980px) {
 	.container {
 		max-width: 100% !important;
-		width: 100% !important;
+		width: 90% !important;
 	}
+
+	.image {
+		width: 80% !important;
+	}
+
 }
 
 @media screen and (max-width: 480px) {
