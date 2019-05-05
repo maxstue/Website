@@ -81,7 +81,7 @@
                   :src="project.node.featuredImage"
                   alt
                 >
-                <g-image class="image fit" v-else src="../assets/images/pic02.jpg" fit="contain"/>
+                <g-image class="image resizePic" v-else src="../assets/images/pic02.jpg" fit="contain"/>
               </span>
               <h3 class="title">{{project.node.title}}</h3>
               <ul class="actions special">
@@ -139,8 +139,25 @@ query Peoject {
   };
 </script>
 
-<style>
+<style scoped>
   .home-links a {
     margin-right: 1rem;
+  }
+  .image {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .title {
+    text-align: center;
+    margin: 36px auto 24px;
+  }
+
+  .rel {
+    position: relative;
+  }
+
+  .resizePic {
+    width: 368px;
   }
 </style>

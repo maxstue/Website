@@ -1,39 +1,25 @@
 <template>
-  <Layout>
-    <div id="one" class="main style1">
-        <div class="container">
-            <div class="row gtr-150">
-                <div class="col-6 col-12-medium">
-                    <header class="major">
-                        <h2>{{ $static.post.title }}</h2>
-                    </header>
-                    <div v-html="$static.post.content"/>
-                </div>
-                <div class="col-6 col-12-medium imp-medium">
-                    <span class="image fit"><img src="../assets/images/pic01.jpg" alt="" /></span>
-                </div>
-            </div>
-        </div>
-    </div>
-  </Layout>
+  <AboutMe />
 </template>
 
-<static-query>
-query Post {
-  post: post (path: "/blog/this-is-a-test-about-me-page") {
-    title
-    content
-    path
-    date
-    slug
-  }
-}
-</static-query>
 
 <script>
+import AboutMe from "~/components/AboutMe";
 export default {
+  components: {
+    AboutMe
+  },
   metaInfo: {
-    title: 'About us'
+    title: 'About'
+  },
+  mounted(){
+    console.log("about mounted");
   }
 }
 </script>
+<style>
+  .title {
+    text-align: center;
+    margin: 36px auto 24px;
+  }
+</style>

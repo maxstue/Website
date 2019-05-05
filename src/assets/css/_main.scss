@@ -11,12 +11,12 @@ a {
 }
 
 .wrapper {
-	padding: 10px;
+	padding: 0;
 }
 
 // Header
 #header {
-	padding: 4em 0 8em 0;
+	padding: 3em 0 8em 0;
 	background-color: #4686a0;
 	color: rgb(255, 255, 255);
 	background-attachment: fixed, fixed, fixed;
@@ -30,7 +30,7 @@ a {
 // Footer
 #footer {
 	flex-shrink: 0;
-	padding: 3em 0 3em 0;
+	padding: 1em 0 1em 0;
 	background-color: #4686a0;
 	color: rgba(255, 255, 255, 0.75);
 	background-attachment: fixed, fixed, fixed;
@@ -39,6 +39,7 @@ a {
 	background-position: top left, center center, center center;
 	background-size: auto, cover, cover;
 	text-align: center;
+	
 }
 
 #footer a {
