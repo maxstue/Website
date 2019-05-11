@@ -5,8 +5,8 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 module.exports = {
-  siteName: 'MaximilianStuempfl',
-  icon: 'src/favicon.png',
+  siteName: "MaximilianStuempfl",
+  icon: "src/favicon.png",
   transformers: {
     remark: {
       externalLinksTarget: '_blank',
@@ -18,6 +18,9 @@ module.exports = {
     }
   },
   plugins: [
+    {
+      use: 'gridsome-plugin-typescript',
+    },
     {
       use: 'gridsome-plugin-netlify-cms',
       options: {

@@ -4,17 +4,24 @@ body {
 	margin: 0;
 	padding: 0;
 	line-height: 1.5;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 a {
 	text-decoration: none;
 }
 
-.wrapper {
-	padding: 0;
+html {
+	height: 100%;
 }
 
-// Header
+main {
+	flex: 1;
+}
+
+/*#region Header*/
 #header {
 	padding: 3em 0 8em 0;
 	background-color: #4686a0;
@@ -27,7 +34,64 @@ a {
 	text-align: center;
 }
 
-// Footer
+
+header p {
+	color: #999;
+	margin: 0 0 1.5em 0;
+	position: relative;
+}
+
+header h2 + p {
+	font-size: 1.25em;
+	line-height: 1.5em;
+	margin-top: -1em;
+}
+
+header h3 + p {
+	font-size: 1.1em;
+	line-height: 1.5em;
+	margin-top: -0.8em;
+}
+
+header h4 + p,
+header h5 + p,
+header h6 + p {
+	font-size: 0.9em;
+	line-height: 1.5em;
+	margin-top: -0.6em;
+}
+
+header.major {
+	margin: 0 0 1em 0;
+}
+
+header.major:after {
+	background: rgba(144, 144, 144, 0.5);
+	content: '';
+	display: inline-block;
+	height: 1px;
+	margin-top: 1.5em;
+	width: 6em;
+}
+
+header.major h2,
+header.major h3,
+header.major h4,
+header.major h5,
+header.major h6 {
+	margin: 0;
+}
+
+header.major p {
+	margin: 0.7em 0 0 0;
+}
+
+header.special {
+	text-align: center;
+}
+/*#endregion Header*/
+
+/*#region Footer*/
 #footer {
 	flex-shrink: 0;
 	padding: 1em 0 1em 0;
@@ -39,7 +103,6 @@ a {
 	background-position: top left, center center, center center;
 	background-size: auto, cover, cover;
 	text-align: center;
-	
 }
 
 #footer a {
@@ -100,9 +163,9 @@ a {
 	margin-left: 0;
 	padding: 0;
 }
+/*#endregion Footer*/
 
-/* Main */
-
+/*#region Main */
 .main {
 	padding: 6em 0 4em 0;
 }
@@ -200,13 +263,15 @@ a {
 
 .main.style2 ul.major-icons li .icon {
 	border-color: #ffffff;
+	transform: rotate(45deg);
 }
 
 .main.style2 .icon.major {
 	color: #ffffff;
 }
+/*#endregion Main */
 
-/* Icon */
+/*#region Icon */
 .icon {
 	text-decoration: none;
 	border-bottom: none;
@@ -271,8 +336,9 @@ a {
 	font-size: 4em;
 	line-height: 1em;
 }
-/* Icons */
+/*#endregion Icon */
 
+/*#region Icons */
 ul.icons {
 	cursor: default;
 	list-style: none;
@@ -327,9 +393,9 @@ ul.major-icons li .icon:before {
 	display: inline-block;
 	line-height: inherit;
 }
+/*#endregion Icons */
 
-/* Container */
-
+/*#region Container */
 .container {
 	margin: 0 auto;
 	max-width: calc(100% - 4em);
@@ -369,7 +435,6 @@ ul.major-icons li .icon:before {
 	.image {
 		width: 80% !important;
 	}
-
 }
 
 @media screen and (max-width: 480px) {
@@ -377,7 +442,9 @@ ul.major-icons li .icon:before {
 		max-width: calc(100% - 3em);
 	}
 }
-/* Row */
+/*#endregion Container */
+
+/*#region Row */
 
 .row {
 	display: flex;
@@ -439,7 +506,7 @@ ul.major-icons li .icon:before {
 }
 
 .row > .col-3 {
-	width: 25%;
+	width: 50%;
 }
 
 .row > .off-3 {
@@ -550,11 +617,6 @@ ul.major-icons li .icon:before {
 
 .row.gtr-25.gtr-uniform > * {
 	padding-top: 0.5em;
-}
-
-.row.gtr-50 {
-	margin-top: 0;
-	margin-left: -1em;
 }
 
 .row.gtr-50 > * {
@@ -2077,8 +2139,9 @@ ul.major-icons li .icon:before {
 		padding-top: 4em;
 	}
 }
+/*#endregion Row */
 
-/* Image */
+/*#region Image */
 
 .image {
 	border-radius: 4px;
@@ -2123,70 +2186,10 @@ ul.major-icons li .icon:before {
 .image.fit img {
 	width: 100%;
 }
+/*#endregion Image */
 
-/* Section/Article */
 
-section.special,
-article.special {
-	text-align: center;
-}
-
-header p {
-	color: #999;
-	margin: 0 0 1.5em 0;
-	position: relative;
-}
-
-header h2 + p {
-	font-size: 1.25em;
-	line-height: 1.5em;
-	margin-top: -1em;
-}
-
-header h3 + p {
-	font-size: 1.1em;
-	line-height: 1.5em;
-	margin-top: -0.8em;
-}
-
-header h4 + p,
-header h5 + p,
-header h6 + p {
-	font-size: 0.9em;
-	line-height: 1.5em;
-	margin-top: -0.6em;
-}
-
-header.major {
-	margin: 0 0 1em 0;
-}
-
-header.major:after {
-	background: rgba(144, 144, 144, 0.5);
-	content: '';
-	display: inline-block;
-	height: 1px;
-	margin-top: 1.5em;
-	width: 6em;
-}
-
-header.major h2,
-header.major h3,
-header.major h4,
-header.major h5,
-header.major h6 {
-	margin: 0;
-}
-
-header.major p {
-	margin: 0.7em 0 0 0;
-}
-
-header.special {
-	text-align: center;
-}
-
-/* Actions */
+/*#region ul Actions */
 
 ul.actions {
 	display: -moz-flex;
@@ -2305,8 +2308,10 @@ ul.actions.fit.stacked {
 		margin-left: -0.5em;
 	}
 }
+/*#endregion ul Actions */
 
-/* Button */
+// TODO: styling der Buttons wegnehmen oder ändern
+/*#region Button */
 
 input[type='submit'],
 input[type='reset'],
@@ -2436,3 +2441,4 @@ button:disabled,
 	cursor: default;
 	opacity: 0.25;
 }
+/*#endregion Button */

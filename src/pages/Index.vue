@@ -8,7 +8,7 @@
             <header class="major">
               <h2>
                 {{title}}
-                <br>amet dolor consequat
+                <br>
               </h2>
             </header>
             <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
@@ -24,7 +24,7 @@
     <section id="two" class="main style2">
       <div class="container">
         <div class="row gtr-150">
-          <div class="col-6 col-12-medium rel">
+          <div class="col-3 col-12-medium rel">
             <ul class="major-icons">
               <li>
                 <span class="icon style1 major">
@@ -121,7 +121,7 @@ query Peoject {
 }
 </page-query>
 
-<script>
+<script lang="ts">
   import * as Sentry from "@sentry/browser";
 
   export default {
@@ -130,7 +130,7 @@ query Peoject {
     },
     data() {
       return {
-        title: "Max"
+        title: "Maximilian Stümpfl"
       };
     },
     mounted() {

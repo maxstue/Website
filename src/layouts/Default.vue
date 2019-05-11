@@ -51,8 +51,8 @@
       </div>
     </header>
     <!-- Body -->
-    <transition name="fade" appear>
-      <main class="content">
+    <transition class="content" name="fade" appear>
+      <main>
         <slot/>
       </main>
     </transition>
@@ -106,6 +106,16 @@ query {
     --menu-speed: 0.75s;
     --primary-color: rgba(243, 120, 20);
     --overlay-color: rgba(2, 139, 252, 0.63);
+  }
+
+  .wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .content {
+    flex: 1 0 auto;
   }
 
   #symbol {
