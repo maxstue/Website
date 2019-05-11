@@ -3,7 +3,7 @@
     <div id="three" class="main style1 special">
       <div class="container">
         <header class="major">
-          <h2>{{title}}</h2>
+          <h1 class="title">{{title}}</h1>
         </header>
         <!-- <p>These are all my bigger and showcaseable projects</p> -->
         <!-- every project  -->
@@ -22,13 +22,7 @@
                 </span>
                 <h3>{{project.node.title}}</h3>
                 <!-- <div v-html="project.node.content"/> -->
-                <!-- <ul class="actions special">
-                <li>
-                  <a class="button">
-                    <g-link :to="project.node.path">Go to</g-link>
-                  </a>
-                </li>
-                </ul>-->
+
               </div>
             </g-link>
           </div>
@@ -80,6 +74,8 @@ query Post {
   .title {
     text-align: center;
     margin: 36px auto 24px;
+    font-size: 43px;
+    font-weight: bold;
   }
 
   .resizePic {
@@ -90,5 +86,9 @@ query Post {
   h3 {
     text-decoration: none;
     color: var(--text-greyish);
+  }
+
+  .major {
+    align-content: center;
   }
 </style>
