@@ -102,11 +102,6 @@ query {
 </static-query>
 
 <style scoped>
-  :root {
-    --menu-speed: 0.75s;
-    --primary-color: rgba(243, 120, 20);
-    --overlay-color: rgba(2, 139, 252, 0.63);
-  }
 
   .wrapper {
     min-height: 100%;

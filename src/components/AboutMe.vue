@@ -92,7 +92,7 @@ query Post {
   .timeline {
     position: relative;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 1em auto 1em auto;
   }
 
   /* The actual timeline (the vertical ruler) */
@@ -100,7 +100,7 @@ query Post {
     content: "";
     position: absolute;
     width: 6px;
-    background-color: rgb(138, 132, 132);
+    background-color:var(--tertiar-color);
     top: 0;
     bottom: 0;
     left: 50%;
@@ -111,7 +111,7 @@ query Post {
   .timecontainer {
     padding: 10px 40px;
     position: relative;
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(255, 255, 255);
     width: 50%;
   }
 
@@ -123,7 +123,7 @@ query Post {
     height: 25px;
     right: -17px;
     background-color: white;
-    border: 4px solid #ff9f55;
+    border: 4px solid var(--secondary-color);
     top: 15px;
     border-radius: 50%;
     z-index: 1;

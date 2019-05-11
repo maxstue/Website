@@ -1,3 +1,12 @@
+:root {
+    --menu-speed: 0.75s;
+	--primary-color: rgba(243, 120, 20);
+	--secondary-color: rgb(16, 148, 172);
+	--tertiar-color: rgb(123, 172, 172);
+	--overlay-color: rgba(2, 139, 252, 0.63);
+	--text-greyish: rgb(92, 91, 91);
+  }
+
 body {
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		'Helvetica Neue', Arial, sans-serif;

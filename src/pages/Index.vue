@@ -37,13 +37,13 @@
                 </span>
               </li>
               <li>
-                <span class="icon style1 major" >
+                <span class="icon style1 major">
                   <i class="fas fa-bolt fa-5x" style="color: #57aed3;"></i>
                 </span>
               </li>
               <li>
-                <span class="icon style1 major"  >
-                  <i class=" fas fa-desktop fa-5x" style="color: #4a87d3;"></i>
+                <span class="icon style1 major">
+                  <i class="fas fa-desktop fa-5x" style="color: #4a87d3;"></i>
                 </span>
               </li>
             </ul>
@@ -74,25 +74,32 @@
         <!-- TODO: zu cards machen mit leichter elevation -->
         <div class="row gtr-150">
           <div v-for="project in $page.projects.edges" :key="project.node.id">
-            <div class="col-4 col-12-medium">
-              <!-- <span class="image resizePic"> -->
+            <g-link :to="project.node.path">
+              <div class="col-4 col-12-medium">
+                <!-- <span class="image resizePic"> -->
                 <g-image
                   class="image resizePic"
                   v-if="project.node.featuredImage"
                   :src="project.node.featuredImage"
                   fit="contain"
                 />
-                <g-image class="image resizePic" v-else src="../assets/images/pic02.jpg" fit="contain"/>
-              <!-- </span> -->
-              <h3 class="title">{{project.node.title}}</h3>
-              <!-- <ul class="actions special">
+                <g-image
+                  class="image resizePic"
+                  v-else
+                  src="../assets/images/pic02.jpg"
+                  fit="contain"
+                />
+                <!-- </span> -->
+                <h3 class="title">{{project.node.title}}</h3>
+                <!-- <ul class="actions special">
                 <li>
                   <a class="button">
                     <g-link :to="project.node.path">Go to</g-link>
                   </a>
                 </li>
-              </ul> -->
-            </div>
+                </ul>-->
+              </div>
+            </g-link>
           </div>
         </div>
       </div>
@@ -160,5 +167,10 @@ query Peoject {
 
   .resizePic {
     width: 368px;
+  }
+
+  h3 {
+    text-decoration: none;
+    color: var(--text-greyish);
   }
 </style>
