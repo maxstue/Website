@@ -6,7 +6,7 @@
           <h1 class="title">{{title}}</h1>
           <div class="center_belowTitle">
             <button class="btn default">List view</button>
-            <div class="title_lline"></div>
+            <div class="seperator_line"></div>
             <button class="btn default">Timeline view</button>
           </div>
         </header>
@@ -93,22 +93,4 @@ query Post {
     color: var(--text-greyish);
   }
 
-  .major {
-    align-content: center;
-  }
-
-  .title_lline {
-    background: rgba(144, 144, 144, 0.5);
-    content: "";
-    display: inline-block;
-    height: 1px;
-    margin-top: 1.5em;
-    width: 10em;
-    margin: 0em 1em 0em 1em ;
-  }
-
-  .center_belowTitle {
-    text-align: center;
-    margin: 1em 0 3em 0,
-  }
 </style>
