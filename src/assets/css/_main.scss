@@ -1,11 +1,4 @@
-:root {
-    --menu-speed: 0.75s;
-	--primary-color: rgba(243, 120, 20);
-	--secondary-color: rgb(16, 148, 172);
-	--tertiar-color: rgb(123, 172, 172);
-	--overlay-color: rgba(2, 139, 252, 0.63);
-	--text-greyish: rgb(92, 91, 91);
-  }
+
 
 body {
 	font-family: -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -75,15 +68,10 @@ header.major {
 }
 
 // header unterstrich
-header.major:after {
-	background: rgba(144, 144, 144, 0.5);
-	content: '';
-	display: inline-block;
-	height: 1px;
-	margin-top: 1.5em;
-	width: 10em;
+// header.major:after {
 	
-}
+	
+// }
 
 header.major h2,
 header.major h3,

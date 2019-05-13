@@ -4,7 +4,13 @@
       <div class="container">
         <header class="major">
           <h1 class="title">{{title}}</h1>
+          <div class="center_belowTitle">
+            <button class="btn default">List view</button>
+            <div class="title_lline"></div>
+            <button class="btn default">Timeline view</button>
+          </div>
         </header>
+
         <!-- <p>These are all my bigger and showcaseable projects</p> -->
         <!-- every project  -->
         <div class="row gtr-150">
@@ -22,7 +28,6 @@
                 </span>
                 <h3>{{project.node.title}}</h3>
                 <!-- <div v-html="project.node.content"/> -->
-
               </div>
             </g-link>
           </div>
@@ -70,7 +75,7 @@ query Post {
   };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .title {
     text-align: center;
     margin: 36px auto 24px;
@@ -90,5 +95,20 @@ query Post {
 
   .major {
     align-content: center;
+  }
+
+  .title_lline {
+    background: rgba(144, 144, 144, 0.5);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-top: 1.5em;
+    width: 10em;
+    margin: 0em 1em 0em 1em ;
+  }
+
+  .center_belowTitle {
+    text-align: center;
+    margin: 1em 0 3em 0,
   }
 </style>
