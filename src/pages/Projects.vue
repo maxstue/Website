@@ -5,69 +5,43 @@
         <header class="major">
           <h1 class="title">{{title}}</h1>
           <div class="center_belowTitle">
-            <button class="btn default">List view</button>
-            <div class="seperator_line"></div>
-            <button class="btn default">Timeline view</button>
+            <button class="btn default" @click="toogleComponent">List view</button>
+            <div class="seperator_line" ></div>
+            <button class="btn default" @click="toogleComponent">Timeline view</button>
           </div>
         </header>
-
-        <!-- <p>These are all my bigger and showcaseable projects</p> -->
-        <!-- every project  -->
-        <div class="row gtr-150">
-          <div v-for="project in $page.posts.edges" :key="project.node.id">
-            <g-link :to="project.node.path">
-              <div class="col-4 col-12-medium">
-                <span class="image resizePic">
-                  <img
-                    class="image resizePic"
-                    v-if="project.node.featuredImage"
-                    :src="project.node.featuredImage"
-                    alt
-                  >
-                  <img class="image resizePic" v-else src="../assets/images/pic02.jpg" alt>
-                </span>
-                <h3>{{project.node.title}}</h3>
-                <!-- <div v-html="project.node.content"/> -->
-              </div>
-            </g-link>
-          </div>
-        </div>
+          <projects v-if="showComponentOne"/>
+          <projects-timeline v-if="showComponentTwo"/>
       </div>
     </div>
   </Layout>
 </template>
 
 
-<page-query>
-query Post {
-  posts: allPost (sortBy:"date", order: ASC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
-    edges {
-      node {
-        id
-        title
-        content
-        date
-        path
-        featuredImage
-        fileInfo {
-          directory
-        }
-      }
-    }
-  }
-}
-</page-query>
 
 <script>
+import Projects from "../components/Projects.vue";
+import ProjectsTimeline from "../components/ProjectTimeline.vue";
   export default {
-    components: {},
+    components: {
+      Projects,
+      ProjectsTimeline
+    },
     metaInfo: {
       title: "projects"
     },
     data: () => {
       return {
-        title: "Projects"
+        title: "Projects",
+        showComponentOne: true,
+        showComponentTwo: false
       };
+    },
+    methods: {
+      toogleComponent(){
+        this.showComponentOne = !this.showComponentOne;
+        this.showComponentTwo = !this.showComponentTwo;
+      }
     },
     mounted() {
       console.log("projects mounted");
