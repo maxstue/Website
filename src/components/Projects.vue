@@ -1,10 +1,8 @@
 <template>
-    <!-- <p>These are all my bigger and showcaseable projects</p> -->
-    <!-- every project  -->
     <div class="row gtr-150">
         <div v-for="project in $static.posts.edges" :key="project.node.id">
             <g-link :to="project.node.path">
-                <div class="col-4 col-12-medium">
+                <div class="col-4 col-12-medium card">
                 <span class="image resizePic">
                     <img
                     class="image resizePic"
@@ -14,7 +12,7 @@
                     >
                     <img class="image resizePic" v-else src="../assets/images/pic02.jpg" alt>
                 </span>
-                <h3>{{project.node.title}}</h3>
+                <h3 class="title">{{project.node.title}}</h3>
                 <!-- <div v-html="project.node.content"/> -->
                 </div>
             </g-link>
@@ -64,8 +62,6 @@ query Post {
   .title {
     text-align: center;
     margin: 36px auto 24px;
-    font-size: 43px;
-    font-weight: bold;
   }
 
   .resizePic {

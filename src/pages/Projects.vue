@@ -6,12 +6,12 @@
           <h1 class="title">{{title}}</h1>
           <div class="center_belowTitle">
             <button class="btn default" @click="toogleComponent">List view</button>
-            <div class="seperator_line" ></div>
+            <div class="seperator_line"></div>
             <button class="btn default" @click="toogleComponent">Timeline view</button>
           </div>
         </header>
-          <projects v-if="showComponentOne"/>
-          <projects-timeline v-if="showComponentTwo"/>
+        <projects v-if="showComponentOne"/>
+        <projects-timeline v-if="showComponentTwo"/>
       </div>
     </div>
   </Layout>
@@ -20,8 +20,8 @@
 
 
 <script>
-import Projects from "../components/Projects.vue";
-import ProjectsTimeline from "../components/ProjectTimeline.vue";
+  import Projects from "../components/Projects.vue";
+  import ProjectsTimeline from "../components/ProjectTimeline.vue";
   export default {
     components: {
       Projects,
@@ -38,7 +38,7 @@ import ProjectsTimeline from "../components/ProjectTimeline.vue";
       };
     },
     methods: {
-      toogleComponent(){
+      toogleComponent() {
         this.showComponentOne = !this.showComponentOne;
         this.showComponentTwo = !this.showComponentTwo;
       }
@@ -66,5 +66,4 @@ import ProjectsTimeline from "../components/ProjectTimeline.vue";
     text-decoration: none;
     color: var(--text-greyish);
   }
-
 </style>

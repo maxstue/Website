@@ -404,7 +404,7 @@ ul.major-icons li .icon:before {
 .container {
 	margin: 0 auto;
 	max-width: calc(100% - 4em);
-	width: 75em;
+	width: 80em;
 }
 
 .container.xsmall {
@@ -2208,7 +2208,7 @@ ul.actions li {
 	padding: 0 0 0 1em;
 	vertical-align: middle;
 }
-/* TODO:  */
+
 ul.actions.special {
 	-moz-justify-content: center;
 	-webkit-justify-content: center;
@@ -2755,3 +2755,27 @@ button:disabled,
 	}
 }
 /*#endregion burgermenu*/
+
+/*#region cards*/
+.card {
+	/* Add shadows to create the "card" effect */
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.2s;
+	border-radius: 5px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+	box-shadow: 0 8px 16px 0 var(--tertiar-color);
+}
+
+/* Add some padding inside the card container */
+.card-container {
+	padding: 2px 16px;
+}
+
+/* Add rounded corners to the top left and the top right corner of the image */
+// img {
+// 	border-radius: 5px 5px 0 0;
+//   }
+/*#endregion*/

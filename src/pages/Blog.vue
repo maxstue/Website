@@ -1,16 +1,16 @@
 <template>
   <Layout>
-    <!-- TODO: better title styling -->
     <h2 class="title">Latest blog posts</h2>
     <div v-for="edge in $page.posts.edges" :key="edge.node.id">
       <div id="one" class="main style1">
         <div class="container">
-          <div class="row gtr-150">
+          <div class="row gtr-150 card">
             <div class="col-6 col-12-medium">
               <header class="major">
                 <g-link :to="edge.node.path">
                   <h2 id="blogTitle">{{ edge.node.title }}</h2>
                 </g-link>
+                <div class="seperator_line"></div>
               </header>
               <div v-html="edge.node.content"/>
             </div>
@@ -77,5 +77,15 @@ query Post {
 
   #blogTitle {
     font-weight: bolder;
+  }
+
+  .seperator_line {
+    background: rgba(144, 144, 144, 0.5);
+    content: "";
+    display: inline-block;
+    height: 1px;
+    margin-top: 1.5em;
+    width: 10em;
+    margin: 0em 1em 0em 0em;
   }
 </style>

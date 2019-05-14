@@ -69,13 +69,11 @@
         <header class="major title">
           <h2>Latest Projects</h2>
         </header>
-        <!-- <p class="title">These are all my bigger and showcaseable projects</p> -->
         <!-- every project  -->
-        <!-- TODO: zu cards machen mit leichter elevation -->
         <div class="row gtr-150">
           <div v-for="project in $page.projects.edges" :key="project.node.id">
             <g-link :to="project.node.path">
-              <div class="col-4 col-12-medium">
+              <div class="col-4 col-12-medium card">
                 <!-- <span class="image resizePic"> -->
                 <g-image
                   class="image resizePic"
