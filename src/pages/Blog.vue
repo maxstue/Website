@@ -26,7 +26,6 @@
           </div>
         </div>
       </div>
-      <hr>
     </div>
   </Layout>
 </template>
