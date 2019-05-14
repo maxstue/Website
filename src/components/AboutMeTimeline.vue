@@ -2,7 +2,7 @@
     <div class="container">
       <div class="example-split">
         <div class="col-md-12 example-title">
-          <h2>Projects</h2>
+          <h2>Education</h2>
         </div>
         <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
           <ul class="timeline timeline-split">
@@ -96,15 +96,15 @@ query Post {
   export default {
     components: {},
     metaInfo: {
-      title: "projectstimeline"
+      title: "aboutmeTimeline"
     },
     data: () => {
       return {
-        title: "Projectstimeline"
+        title: "aboutmeTimeline"
       };
     },
     mounted() {
-      console.log("projectstimeline mounted");
+      console.log("aboutmeTimeline mounted");
     }
   };
 </script>
