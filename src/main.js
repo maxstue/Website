@@ -10,6 +10,7 @@ import Vuetify from 'vuetify'
 // import 'vuetify/dist/vuetify.min.css'
 // wenn ich das importierre dann werden diese styles verwendet
 
+
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component
   Vue.component('Layout', DefaultLayout)

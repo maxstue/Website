@@ -6,12 +6,11 @@
         <div class="row gtr-150">
           <div class="col-6 col-12-medium">
             <header class="major">
-              <h2>
-                {{title}}
-                <br>
+              <h2 data-splitting class="fall-down" id="type">
               </h2>
+              <br>
             </header>
-            <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+            <p >Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
           </div>
           <div class="col-6 col-12-medium imp-medium">
             <g-image class="image fit" src="../assets/images/pic01.jpg" fit="contain"/>
@@ -105,7 +104,6 @@
   </Layout>
 </template>
 
-
 <page-query>
 query Peoject {
   projects: allPost (sortBy:"date", order: ASC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
@@ -126,8 +124,11 @@ query Peoject {
 }
 </page-query>
 
-<script lang="ts">
+<script >
   import * as Sentry from "@sentry/browser";
+  import "splitting/dist/splitting.css";
+  import "splitting/dist/splitting-cells.css";
+  import Splitting from "splitting";
 
   export default {
     metaInfo: {
@@ -135,17 +136,30 @@ query Peoject {
     },
     data() {
       return {
-        title: "Maximilian Stümpfl"
+        title: " Hello I'm Maximilian Stümpfl",
+        speed: 90,
+        wordCounter: 0
       };
     },
     mounted() {
+      // Splitting();
       console.log("home mounted");
       Sentry.captureMessage("Home mounted test");
+      this.typeWriter();
+    },
+    methods: {
+      typeWriter() {
+        if (this.wordCounter < this.title.length) {
+          document.getElementById("type").innerHTML += this.title.charAt(this.wordCounter);
+          this.wordCounter++;
+          setTimeout(this.typeWriter, this.speed);
+        }
+      }
     }
   };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
   .home-links a {
     margin-right: 1rem;
   }
@@ -170,5 +184,24 @@ query Peoject {
   h3 {
     text-decoration: none;
     color: var(--text-greyish);
+  }
+
+  .fall-down .words {
+    .char {
+      animation: slide-down 5s forwards;
+      // animation-delay: calc(0.5s + (0.1s * 0.5));
+      opacity: 0;
+
+      @keyframes slide-down {
+        from {
+          transform: translateY(125%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0%);
+          opacity: 1;
+        }
+      }
+    }
   }
 </style>

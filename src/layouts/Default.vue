@@ -50,12 +50,17 @@
         </div>
       </div>
     </header>
-    <!-- Body -->
-    <transition class="content" name="fade" appear>
-      <main>
-        <slot/>
-      </main>
-    </transition>
+    <div>
+      <!-- <progress-bar :value="progress"/> -->
+      <div class="text-section"  ref="text">
+        <!-- Body -->
+        <transition class="content" name="fade" appear>
+          <main>
+            <slot/>
+          </main>
+        </transition>
+      </div>
+    </div>
 
     <!-- Footer -->
     <footer id="footer">
@@ -101,8 +106,47 @@ query {
 }
 </static-query>
 
-<style scoped>
+<script>
+  // import ProgressBar from "../components/ProgressBar";
 
+  export default {
+    components: { 
+      // ProgressBar 
+      },
+    data: () => {
+      return {
+        progress: 0
+      };
+    },
+    methods: {
+    //   onScroll() {
+        
+    //     const progress = this.$refs.text.scrollTop / (this.$refs.text.scrollHeight - this.$refs.text.clientHeight);
+    //     console.log(progress);
+    //     console.log(this.$refs.text.scrollHeight);
+    //     console.log(this.$refs.text.clientHeight);
+    //     console.log(this.$refs.text.scrollTop );
+        
+        
+    //     if (progress > 1) {
+    //       this.progress = 1;
+    //     } else if (progress < 0) {
+    //       this.progress = 0;
+    //     } else {
+    //       this.progress = progress;
+    //     }
+    //   }
+    // },
+    // created: function () {
+    //     window.addEventListener('scroll', this.onScroll);
+    // },
+    // destroyed: function () {
+    //     window.removeEventListener('scroll', this.onScroll);
+    }
+  };
+</script>
+
+<style scoped>
   .wrapper {
     min-height: 100%;
     display: flex;
@@ -169,5 +213,4 @@ query {
   .mainbar li a:hover {
     opacity: 1;
   }
-
 </style>

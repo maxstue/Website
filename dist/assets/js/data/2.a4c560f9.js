@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{241:function(t){t.exports={data:{post:{title:"testtiitest",content:"<p>Hello test Projekt</p>\n"}}}}}]);
