@@ -126,9 +126,9 @@ query Peoject {
 
 <script >
   import * as Sentry from "@sentry/browser";
-  import "splitting/dist/splitting.css";
-  import "splitting/dist/splitting-cells.css";
-  import Splitting from "splitting";
+  // import "splitting/dist/splitting.css";
+  // import "splitting/dist/splitting-cells.css";
+  // import Splitting from "splitting";
 
   export default {
     metaInfo: {
