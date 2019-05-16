@@ -17,8 +17,16 @@ build site:
 #     - npm install --progress=false
 #     - npm run unit
 
+testdeploy:
+  image: node:10.15.0
+  stage: testdeploy
+  script:
+    - npm install
+    - npm run netdev
+
 deploy:
   image: node:10.15.0
   stage: deploy
   script:
+    - npm install
     - npm run deploy

@@ -49,4 +49,8 @@ export default {
     text-align: center;
     margin: 36px auto 24px;
   }
+
+  h2 {
+    text-decoration: none;
+  }
 </style>

@@ -77,6 +77,8 @@ query Post {
 
   #blogTitle {
     font-weight: bolder;
+    text-decoration: none;
+    text-decoration-color: black;
   }
 
   .seperator_line {
