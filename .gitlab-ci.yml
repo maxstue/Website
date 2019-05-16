@@ -1,3 +1,10 @@
+stages:
+  - build
+  - test
+  - predeploy
+  - deploy
+
+
 build site:
   image: node:10.15.0
   stage: build
@@ -19,14 +26,16 @@ build site:
 
 testdeploy:
   image: node:10.15.0
-  stage: testdeploy
-  script:
+  stage: predeploy
+  before_script:
     - npm install
+  script:
     - npm run netdev
 
 deploy:
   image: node:10.15.0
   stage: deploy
-  script:
+  before_script:
     - npm install
+  script:
     - npm run deploy

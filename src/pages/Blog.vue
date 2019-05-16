@@ -76,9 +76,14 @@ query Post {
   }
 
   #blogTitle {
+    color: black;
     font-weight: bolder;
     text-decoration: none;
     text-decoration-color: black;
+  }
+
+  #blogTitle:visited:focus{
+    text-decoration: none;
   }
 
   .seperator_line {
