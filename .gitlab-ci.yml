@@ -4,7 +4,8 @@ stages:
   - predeploy
   - deploy
 
-job1:
+
+build site:
   image: node:10.15.0
   stage: build
   script:
@@ -22,7 +23,8 @@ job1:
 #   script:
 #     - npm install --progress=false
 #     - npm run unit
-job2:
+
+testdeploy:
   image: node:10.15.0
   stage: predeploy
   before_script:
@@ -30,7 +32,7 @@ job2:
   script:
     - npm run netdev
 
-job3:
+deploy:
   image: node:10.15.0
   stage: deploy
   before_script:
