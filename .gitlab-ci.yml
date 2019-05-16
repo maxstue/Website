@@ -4,17 +4,17 @@ stages:
   - predeploy
   - deploy
 
-
-build site:
-  image: node:10.15.0
-  stage: build
-  script:
-    - npm install --progress=false
-    - npm run build
-  artifacts:
-    expire_in: 1 week
-    paths:
-      - dist
+job1:
+  build site:
+    image: node:10.15.0
+    stage: build
+    script:
+      - npm install --progress=false
+      - npm run build
+    artifacts:
+      expire_in: 1 week
+      paths:
+        - dist
 
 
 # unit test:
@@ -23,19 +23,19 @@ build site:
 #   script:
 #     - npm install --progress=false
 #     - npm run unit
-
-testdeploy:
-  image: node:10.15.0
-  stage: predeploy
-  before_script:
-    - npm install
-  script:
-    - npm run netdev
-
-deploy:
-  image: node:10.15.0
-  stage: deploy
-  before_script:
-    - npm install
-  script:
-    - npm run deploy
+job2:
+  testdeploy:
+    image: node:10.15.0
+    stage: predeploy
+    before_script:
+      - npm install
+    script:
+      - npm run netdev
+job3:
+  deploy:
+    image: node:10.15.0
+    stage: deploy
+    before_script:
+      - npm install
+    script:
+      - npm run deploy
