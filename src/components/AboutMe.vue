@@ -36,7 +36,6 @@ query Post {
     content
     path
     date
-    slug
   }
 }
 </static-query>

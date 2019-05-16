@@ -2513,6 +2513,13 @@ button:disabled,
 	}
 }
 
+.timeline-content:not(.p):hover {
+	background: rgba(223, 219, 219, 0.356);
+	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+	transition: .4s;
+	border-radius: 5px;
+}
+
 /*----- TIMELINE PERIOD -----*/
 
 .period {
@@ -2598,6 +2605,7 @@ button:disabled,
 	}
 	.timeline-item:hover .timeline-marker:before {
 		background: var(--timeline_dots);
+		transition: .4s;
 	}
 }
 /*#endregion */
@@ -2759,14 +2767,14 @@ button:disabled,
 /*#region cards*/
 .card {
 	/* Add shadows to create the "card" effect */
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
 	transition: 0.2s;
 	border-radius: 5px;
 }
 
 /* On mouse-over, add a deeper shadow */
 .card:hover {
-	box-shadow: 0 8px 16px 0 var(--tertiar-color);
+	box-shadow: 0 2px 12px 0 var(--tertiarA-color);
 }
 
 /* Add some padding inside the card container */

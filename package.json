@@ -12,7 +12,7 @@
     "@gridsome/source-filesystem": "^0.3.0",
     "@gridsome/transformer-remark": "^0.2.1",
     "@sentry/browser": "^5.1.1",
-    "gridsome": "^0.5.0",
+    "gridsome": "^0.6.0",
     "gridsome-plugin-netlify-cms": "^1.0.6",
     "netlify-cms": "^2.9.1",
     "splitting": "^1.0.6",

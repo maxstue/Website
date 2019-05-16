@@ -35,7 +35,7 @@
             <li class="timeline-item period">
               <div class="timeline-info"></div>
               <div class="timeline-marker"></div>
-              <div class="timeline-content">
+              <div class="timeline-content p">
                 <h2 class="timeline-title">April 2016</h2>
               </div>
             </li>
