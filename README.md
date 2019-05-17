@@ -1,5 +1,7 @@
 # Default starter for Gridsome
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/663151e8be70472e9706ddac2ca5bcd2)](https://app.codacy.com/app/lTimeless/Website?utm_source=github.com&utm_medium=referral&utm_content=lTimeless/Website&utm_campaign=Badge_Grade_Dashboard)
+
 ### 1. Install Gridsome CLI tool if you don't have
 
 `npm install --global @gridsome/cli`
