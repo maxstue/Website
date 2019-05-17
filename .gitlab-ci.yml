@@ -29,6 +29,7 @@ testdeploy:
   stage: predeploy
   before_script:
     - npm install
+    - npm install netlify-cli
   script:
     - npm run netdev
 
@@ -37,5 +38,6 @@ deploy:
   stage: deploy
   before_script:
     - npm install
+    - npm install netlify-cli
   script:
     - npm run deploy
