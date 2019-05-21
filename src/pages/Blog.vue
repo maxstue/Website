@@ -1,6 +1,7 @@
 <template>
   <Layout>
-    <h2 class="title">Latest blog posts</h2>
+    <!-- <h2 class="title">Latest blog posts</h2> -->
+    <div class="empty_seperator"></div>
     <div v-for="edge in $page.posts.edges" :key="edge.node.id">
       <div id="one" class="main style1">
         <div class="container">
@@ -37,6 +38,7 @@
         </div>
       </div>
     </div>
+    <div class="empty_seperator"></div>
   </Layout>
 </template>
 
@@ -59,7 +61,7 @@ query Post {
 }
 </page-query>
 
-<script>
+<script >
   export default {
     components: {},
     metaInfo: {

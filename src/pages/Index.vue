@@ -1,26 +1,66 @@
 <template>
   <Layout>
     <!-- One -->
-    <section id="one" class="main style1">
+    <div id="one" class="main style1">
       <div class="container">
         <div class="row gtr-150">
           <div class="col-6 col-12-medium">
             <header class="major">
-              <h2 data-splitting class="fall-down" id="type">
-              </h2>
+              <h2 data-splitting class="fall-down" id="type"></h2>
               <br>
             </header>
-            <p >Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
+            <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
           </div>
           <div class="col-6 col-12-medium imp-medium">
             <g-image class="image fit" src="../assets/images/pic01.jpg" fit="contain"/>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
     <!-- Two -->
-    <section id="two" class="main style2">
+
+    <section id="two " class="main style2">
+      <h2 class="title">My Skills </h2>
+      <div class="container">
+        <div class="skillContainer">
+          <div class="wrapper">
+            <div class="tleft">.Net/ c#</div>
+            <div class="trightNet">90%</div>
+          </div>
+          <div class="skills csharp"></div>
+        </div>
+        <div class="skillContainer">
+          <div class="wrapper">
+            <div class="tleft">Vue.js</div>
+            <div class="trightVue">70%</div>
+          </div>
+          <div class="skills vue"></div>
+        </div>
+        <div class="skillContainer">
+          <div class="wrapper">
+            <div class="tleft">Unity</div>
+            <div class="trightUnity">60%</div>
+          </div>
+          <div class="skills unity"></div>
+        </div>
+        <div class="skillContainer">
+          <div class="wrapper">
+            <div class="tleft">C++</div>
+            <div class="trightC--">40%</div>
+          </div>
+          <div class="skills c--"></div>
+        </div>
+        <div class="skillContainer">
+          <div class="wrapper">
+            <div class="tleft">Typescript / javascript</div>
+            <div class="trightTS">70%</div>
+          </div>
+          <div class="skills vue"></div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="two" class="main style2">
       <div class="container">
         <div class="row gtr-150">
           <div class="col-3 col-12-medium rel">
@@ -60,7 +100,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section>-->
 
     <!-- Three -->
     <section id="three" class="main style1 special">
@@ -150,7 +190,9 @@ query Peoject {
     methods: {
       typeWriter() {
         if (this.wordCounter < this.title.length) {
-          document.getElementById("type").innerHTML += this.title.charAt(this.wordCounter);
+          document.getElementById("type").innerHTML += this.title.charAt(
+            this.wordCounter
+          );
           this.wordCounter++;
           setTimeout(this.typeWriter, this.speed);
         }
@@ -171,6 +213,7 @@ query Peoject {
   .title {
     text-align: center;
     margin: 36px auto 24px;
+    color: black !important;
   }
 
   .rel {
