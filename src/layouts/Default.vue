@@ -51,21 +51,21 @@
       </div>
       <div class="seperator_line_full"></div>
     </header>
-    <div>
+    <div class="content">
       <!-- <progress-bar :value="progress"/> -->
-      <div class="text-section" ref="text">
+      <!-- <div class="text-section" ref="text"> -->
         <!-- Body -->
-        <transition class="content" name="fade" appear>
+        <transition name="fade" appear>
           <main>
             <slot/>
           </main>
         </transition>
-      </div>
+      <!-- </div> -->
     </div>
 
     <!-- Footer -->
     <footer id="footer">
-      <div class="seperator_line_full"></div>
+      <!-- <div class="seperator_line_full"></div> -->
       <ul class="icons">
         <li>
           <a href="https://github.com/lTimeless" target="_blank" class="icon">
