@@ -2825,7 +2825,9 @@ button:disabled,
 }
 .csharp {
 	width: 90%;
-	background-color: var(--primary-color);
+	// background-color: var(--secondary-color);
+	background-image: linear-gradient(to right, var(--secondary-color), var(--secondaryB-color));
+
 }
 
 .trightUnity {
@@ -2835,7 +2837,9 @@ button:disabled,
 }
 .unity {
 	width: 60%;
-	background-color: var(--primary-color);
+	// background-color: var(--secondary-color);
+	background-image: linear-gradient(to right, var(--secondary-color), var(--secondaryB-color));
+
 }
 
 .trightVue {
@@ -2845,7 +2849,9 @@ button:disabled,
 }
 .vue {
 	width: 70%;
-	background-color: var(--primary-color);
+	// background-color: var(--secondary-color);
+	background-image: linear-gradient(to right, var(--secondary-color), var(--secondaryB-color));
+
 }
 
 .trightC-- {
@@ -2855,7 +2861,8 @@ button:disabled,
 }
 .c-- {
 	width: 30%;
-	background-color: var(--primary-color);
+	// background-color: var(--secondary-color);
+	background-image: linear-gradient(to right, var(--secondary-color), var(--secondaryB-color));
 }
 
 .trightTS {

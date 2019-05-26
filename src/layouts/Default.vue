@@ -49,10 +49,11 @@
           </div>
         </div>
       </div>
+      <div class="seperator_line_full"></div>
     </header>
     <div>
       <!-- <progress-bar :value="progress"/> -->
-      <div class="text-section"  ref="text">
+      <div class="text-section" ref="text">
         <!-- Body -->
         <transition class="content" name="fade" appear>
           <main>
@@ -64,6 +65,7 @@
 
     <!-- Footer -->
     <footer id="footer">
+      <div class="seperator_line_full"></div>
       <ul class="icons">
         <li>
           <a href="https://github.com/lTimeless" target="_blank" class="icon">
@@ -110,38 +112,35 @@ query {
   // import ProgressBar from "../components/ProgressBar";
 
   export default {
-    components: { 
-      // ProgressBar 
-      },
+    components: {
+      // ProgressBar
+    },
     data: () => {
       return {
         progress: 0
       };
     },
     methods: {
-    //   onScroll() {
-        
-    //     const progress = this.$refs.text.scrollTop / (this.$refs.text.scrollHeight - this.$refs.text.clientHeight);
-    //     console.log(progress);
-    //     console.log(this.$refs.text.scrollHeight);
-    //     console.log(this.$refs.text.clientHeight);
-    //     console.log(this.$refs.text.scrollTop );
-        
-        
-    //     if (progress > 1) {
-    //       this.progress = 1;
-    //     } else if (progress < 0) {
-    //       this.progress = 0;
-    //     } else {
-    //       this.progress = progress;
-    //     }
-    //   }
-    // },
-    // created: function () {
-    //     window.addEventListener('scroll', this.onScroll);
-    // },
-    // destroyed: function () {
-    //     window.removeEventListener('scroll', this.onScroll);
+      //   onScroll() {
+      //     const progress = this.$refs.text.scrollTop / (this.$refs.text.scrollHeight - this.$refs.text.clientHeight);
+      //     console.log(progress);
+      //     console.log(this.$refs.text.scrollHeight);
+      //     console.log(this.$refs.text.clientHeight);
+      //     console.log(this.$refs.text.scrollTop );
+      //     if (progress > 1) {
+      //       this.progress = 1;
+      //     } else if (progress < 0) {
+      //       this.progress = 0;
+      //     } else {
+      //       this.progress = progress;
+      //     }
+      //   }
+      // },
+      // created: function () {
+      //     window.addEventListener('scroll', this.onScroll);
+      // },
+      // destroyed: function () {
+      //     window.removeEventListener('scroll', this.onScroll);
     }
   };
 </script>
@@ -161,7 +160,7 @@ query {
     font-size: 40px;
     letter-spacing: 1vh;
     color: inherit;
-    margin: 0 0 0 1em;
+    margin: 0 0 0 0em;
     color: inherit;
     text-decoration: none;
   }
@@ -210,7 +209,26 @@ query {
   .mainbar:hover a {
     opacity: 0.5;
   }
+
   .mainbar li a:hover {
     opacity: 1;
+    /* color: var(--primary-color); */
+    text-decoration: underline;
+    text-decoration-color: var(--secondaryB-color);
+
+  }
+
+  .icon:hover {
+    color: var(--secondary-color) !important;
+  }
+
+  .seperator_line_full {
+    background: rgba(144, 144, 144, 0.5);
+    content: "";
+    display: inline-block;
+    height: 0.7px;
+    margin-top: 1.5em;
+    width: 75em;
+    margin: 0em 1em 0em 1em;
   }
 </style>
