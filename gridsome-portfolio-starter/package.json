@@ -1,0 +1,33 @@
+{
+  "name": "andremadarang",
+  "private": true,
+  "scripts": {
+    "build": "gridsome build",
+    "dev": "gridsome develop",
+    "explore": "gridsome explore",
+    "netdev": "gridsome build && netlify deploy",
+    "deploy": "gridsome build && netlify deploy --prod"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "@fullhuman/postcss-purgecss": "^1.1.0",
+    "@gridsome/plugin-sitemap": "^0.2.0",
+    "@gridsome/source-filesystem": "^0.5.0",
+    "@gridsome/transformer-remark": "^0.3.2",
+    "@sentry/browser": "^5.3.0",
+    "gridsome": "^0.6.2",
+    "gridsome-plugin-netlify-cms": "^1.0.6",
+    "gridsome-plugin-remark-shiki": "^0.3.0",
+    "gridsome-plugin-rss": "^1.1.0",
+    "netlify-cms": "^2.9.1",
+    "node-sass": "^4.12.0",
+    "postcss-import": "^12.0.1",
+    "sass-loader": "^7.1.0",
+    "typescript": "^3.4.5",
+    "vue-scrollto": "^2.15.0",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "devDependencies": {
+    "tailwindcss": "^1.0.1"
+  }
+}
