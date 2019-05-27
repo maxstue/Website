@@ -41,3 +41,5 @@ deploy:
     - npm install netlify-cli
   script:
     - npm run deploy
+  only: 
+    - master
