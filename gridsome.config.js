@@ -16,33 +16,42 @@ if (process.env.NODE_ENV === 'production') postcssPlugins.push(purgecss())
 module.exports = {
   siteName: 'Maximilian Stümpfl | Personal Portfolio',
   plugins: [
-    // {
-    //   use: '@gridsome/source-filesystem',
-    //   options: {
-    //     path: 'blog/**/*.md',
-    //     typeName: 'Post',
-    //     refs: {
-    //       tags: {
-    //         typeName: 'Tag',
-    //         route: 'tag/:id',
-    //         create: true
-    //       }
-    //     },
-    //     remark: {
-    //       plugins: [
-    //         [ 'gridsome-plugin-remark-shiki', { theme: 'Material-Theme-Palenight', skipInline: true } ]
-    //       ]
-    //     }
-    //   }
-    // },
+    {
+      use: '@gridsome/source-filesystem',
+      options: {
+        path: 'blog/**/*.md',
+        typeName: 'Post',
+        route: '/blog/:slug',
+        refs: {
+          tags: {
+            typeName: 'Tag',
+            route: 'tag/:id',
+            create: true
+          }
+        },
+      }
+    },
+    {
+      use: 'gridsome-plugin-netlify-cms',
+      options: {
+        // modulePath: `src/cms/index.js`,
+        configPath: `static/admin/config.yml`,
+        // htmlPath: `src/admin/index.html`,
+        publicPath: `/admin`,
+        htmlTitle: `My CMS`
+      }
+    } ,
   ],
-  // transformers: {
-  //   remark: {
-  //     externalLinksTarget: '_blank',
-  //     externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-  //     anchorClassName: 'icon icon-link',
-  //   }
-  // },
+  transformers: {
+    remark: {
+      externalLinksTarget: '_blank',
+      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+      anchorClassName: 'icon icon-link',
+      plugins: [
+        // ...global plugins
+      ]
+    }
+  },
   css: {
     loaderOptions: {
       postcss: {

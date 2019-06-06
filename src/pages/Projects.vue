@@ -24,6 +24,7 @@
         :totalPages="$page.posts.pageInfo.totalPages"
         :currentPage="$page.posts.pageInfo.currentPage"
       /> -->
+
       <p class="font-bold text-center text-xl">
           Work in Progress ... comming this Summer ;)
       </p>
@@ -38,35 +39,12 @@ import PaginationPosts from '../components/PaginationPosts'
 
 export default {
   metaInfo: {
-    title: 'Blog'
+    title: 'Projekte'
   },
   components: {
     PaginationPosts
   }
 }
-
-
-// <page-query>
-// query Posts ($page: Int) {
-//   posts: allPost (sortBy: "date", order: DESC, perPage: 3, page: $page) @paginate {
-//     totalCount
-//     pageInfo {
-//       totalPages
-//       currentPage
-//     }
-//     edges {
-//       node {
-//         id
-//         title
-//         date (format: "MMMM D, Y")
-//         summary
-//         timeToRead
-//         path
-//       }
-//     }
-//   }
-// }
-// </page-query>
 
 
 </script>
