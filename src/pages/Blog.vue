@@ -1,122 +1,70 @@
 <template>
   <Layout>
-    <!-- <h2 class="title">Latest blog posts</h2> -->
-    <div class="empty_seperator"></div>
-    <div v-for="edge in $page.posts.edges" :key="edge.node.id">
-      <div id="one" class="main style1">
-        <div class="container">
-          <g-link :to="edge.node.path">
-            <div class="row gtr-150 card">
-              <div class="col-6 col-12-medium">
-                <header class="major">
-                  <h2 id="blogTitle">{{ edge.node.title }}</h2>
-                  <div class="date">{{edge.node.date.split("T")[0]}}</div>
-                  <!-- <div class="seperator_line"></div> -->
-                </header>
-                <div
-                  class="content"
-                  v-if="edge.node.content.length < 200"
-                  v-html="edge.node.content + ' ...' "
-                />
-                <div
-                  class="content"
-                  v-if="edge.node.content.length >= 300"
-                  v-html="edge.node.content.substring(0,300) + ' ...' "
-                />
-              </div>
-
-              <!-- <div class="col-6 col-12-medium imp-medium">
-              <span class="image fit">
-                <g-link :to="edge.node.path">
-                  <img src="../assets/images/pic01.jpg" alt>
-                </g-link>
-              </span>
-              <span>{{edge.node.date}}</span>
-              </div>-->
-            </div>
-          </g-link>
+    <div class="container-inner mx-auto py-16">
+      <!-- <div v-for="post in $page.posts.edges" :key="post.id" class="post border-gray-400 border-b mb-12">
+        <h2 class="text-3xl font-bold"><g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link></h2>
+        <div class="text-copy-secondary mb-4">
+          <span>{{ post.node.date }}</span>
+          <span> &middot; </span>
+          <span>{{ post.node.timeToRead }} min read</span>
         </div>
-      </div>
+
+        <div class="text-lg mb-4">
+          {{ post.node.summary }}
+        </div>
+
+        <div class="mb-8">
+          <g-link :to="post.node.path" class="font-bold uppercase">Read More</g-link>
+        </div>
+      </div> end post -->
+
+      <!-- <pagination-posts
+        v-if="$page.posts.pageInfo.totalPages > 1"
+        base="/blog"
+        :totalPages="$page.posts.pageInfo.totalPages"
+        :currentPage="$page.posts.pageInfo.currentPage"
+      /> -->
     </div>
-    <div class="empty_seperator"></div>
   </Layout>
 </template>
 
-<page-query>
-query Post {
-  posts: allPost (sortBy:"date", order: ASC, filter: {fileInfo: {directory: {regex: "blog/blog"}}}) {
-    edges {
-      node {
-        id
-        title
-        content
-        date
-        path
-        fileInfo {
-          directory
-        }
-      }
-    }
+
+
+<script>
+import PaginationPosts from '../components/PaginationPosts'
+
+export default {
+  metaInfo: {
+    title: 'Blog'
+  },
+  components: {
+    PaginationPosts
   }
 }
-</page-query>
 
-<script >
-  export default {
-    components: {},
-    metaInfo: {
-      title: "Blog"
-    },
-    mounted() {
-      console.log("blog mounted");
-    }
-  };
+
+// <page-query>
+// query Posts ($page: Int) {
+//   posts: allPost (sortBy: "date", order: DESC, perPage: 3, page: $page) @paginate {
+//     totalCount
+//     pageInfo {
+//       totalPages
+//       currentPage
+//     }
+//     edges {
+//       node {
+//         id
+//         title
+//         date (format: "MMMM D, Y")
+//         summary
+//         timeToRead
+//         path
+//       }
+//     }
+//   }
+// }
+// </page-query>
+
+
 </script>
 
-<style scoped>
-  .title {
-    text-align: center;
-    margin: 36px auto 24px;
-    font-size: 43px;
-    font-weight: bold;
-  }
-
-  #blogTitle {
-    font-weight: 400;
-    text-decoration: none;
-    text-decoration-color: black;
-    color: var(--text-greyish);
-  }
-
-  .seperator_line {
-    background: rgba(144, 144, 144, 0.5);
-    content: "";
-    display: inline-block;
-    height: 1px;
-    margin-top: 1.5em;
-    width: 10em;
-    margin: 0em 1em 0em 0em;
-  }
-
-  .content {
-    text-decoration: none;
-    color: var(--text-greyish);
-    font-size: 15px;
-  }
-
-  .date {
-    margin: 5px 0 0 0;
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
-    font-weight: 700;
-  }
-
-  .row > .col-6 {
-    width: 100%;
-  }
-
-  .card {
-    padding: 0 5em 0 2em;
-  }
-</style>

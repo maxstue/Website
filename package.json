@@ -1,29 +1,17 @@
 {
-  "name": "portfolio",
+  "name": "my-website",
   "private": true,
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
-    "explore": "gridsome explore",
-    "netdev": "gridsome build && netlify deploy",
-    "deploy": "gridsome build && netlify deploy --prod"
+    "explore": "gridsome explore"
   },
   "dependencies": {
-    "@gridsome/source-filesystem": "^0.3.0",
-    "@gridsome/transformer-remark": "^0.2.1",
-    "@sentry/browser": "^5.1.1",
-    "gridsome": "^0.6.0",
-    "gridsome-plugin-netlify-cms": "^1.0.6",
-    "netlify-cms": "^2.9.1",
-    "splitting": "^1.0.6",
-    "vuetify": "^1.5.14"
+    "@fullhuman/postcss-purgecss": "^1.2.0",
+    "@sentry/browser": "^5.4.0",
+    "gridsome": "^0.6.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.1",
-    "gridsome-plugin-typescript": "0.0.3",
-    "node-sass": "^4.12.0",
-    "sass-loader": "^7.1.0",
-    "typescript": "^3.4.5",
-    "webpack-node-externals": "^1.7.2"
+    "tailwindcss": "^1.0.3"
   }
 }

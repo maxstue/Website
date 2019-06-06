@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[11],{242:function(n){n.exports={data:{post:{title:"This is a test About Me Page",content:"<p>Hello my name is Maximilian Stümpfl</p>\n<p>...</p>\n<p>and this is my Website</p>\n"}}}}}]);

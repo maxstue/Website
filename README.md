@@ -1,7 +1,6 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/41409fa6a3a54057baa3b4bbbfb58894)](https://www.codacy.com/app/lTimeless/Website?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lTimeless/Website&amp;utm_campaign=Badge_Grade) [![pipeline status](https://gitlab.com/Imaximilian/portfolio/badges/master/pipeline.svg)](https://gitlab.com/Imaximilian/portfolio/commits/master) [![coverage report](https://gitlab.com/Imaximilian/portfolio/badges/master/coverage.svg)](https://gitlab.com/Imaximilian/portfolio/commits/master)
+# Default starter for Gridsome
 
-# My Website and online portfolio
-https://goofy-raman-2573cd.netlify.com/
+This is the project you get when you run `gridsome create new-project`.
 
 ### 1. Install Gridsome CLI tool if you don't have
 
@@ -13,9 +12,3 @@ https://goofy-raman-2573cd.netlify.com/
 2. `cd my-gridsome-site` to open the folder
 3. `gridsome develop` to start a local dev server at `http://localhost:8080`
 4. Happy coding 🎉🙌
-
-
-### Web Testing
-
-1. Light house google
-    - https://web.dev/

@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{239:function(t){t.exports={data:{posts:{edges:[{node:{id:"ca8b3bbed6625b322694deba6f1fbb65",title:"tesetstt",content:"<p>adasbgfiupsluidfajf</p>\n",date:"2019-04-21T15:49:33.397Z",path:"/blog/tesetstt",fileInfo:{directory:"blog/blog"}}}]}}}}}]);
