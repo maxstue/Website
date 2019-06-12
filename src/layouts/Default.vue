@@ -56,7 +56,11 @@
 
     <!-- Body -->
     <div class="flex-grow">
-      <slot/>
+      <transition name="fade" appear>
+        <main> <!-- a wrapper for slot is needed -->
+          <slot /> <!-- the content -->
+        </main>
+      </transition>
     </div>
 
     <!-- Footer -->
@@ -146,6 +150,13 @@ export default {
 
 
 <style>
+.fade-enter-active {
+  transition: opacity .6s;
+}
+
+.fade-enter {
+  opacity: 0;
+}
 /* body {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;

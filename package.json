@@ -4,7 +4,9 @@
   "scripts": {
     "build": "gridsome build",
     "dev": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "netdev": "gridsome build && netlify deploy",
+    "deploy": "gridsome build && netlify deploy --prod"
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^1.2.0",
@@ -13,7 +15,9 @@
     "@sentry/browser": "^5.4.0",
     "gridsome": "^0.6.0",
     "gridsome-plugin-netlify-cms": "^1.0.7",
-    "netlify-cms": "^2.9.1"
+    "netlify-cms": "^2.9.1",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^7.1.0"
   },
   "devDependencies": {
     "tailwindcss": "^1.0.3"

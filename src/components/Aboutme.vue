@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div id="one" class="main style1">
+    <!-- <div id="one" class="main style1">
       <div class="container">
         <div class="row gtr-150">
           <div class="col-6 col-12-medium">
@@ -11,20 +11,22 @@
           </div>
           <div class="col-6 col-12-medium imp-medium">
             <span class="image fit">
-              <!-- <img src="../assets/images/pic01.jpg" alt> -->
+              <img src="../assets/images/pic01.jpg" alt>
             </span>
           </div>
         </div>
       </div>
+    </div> -->
+    <div class="container-inner mx-auto my-16">
+      <h1 class="text-4xl font-bold leading-tight">{{ $static.post.title }}</h1>
+      <!-- <div class="text-xl text-gray-600 mb-4">{{ $page.post.date }}</div> -->
+      
+      <div class="markdown-body mb-8" v-html="$static.post.content" />
+      <div class="mb-8" >
+        <g-link to="/" class="font-bold uppercase">Back to Home</g-link>
+      </div>
+      
     </div>
-
-    <div class="center_belowTitle">
-      <button class="btn default" @click="toogleComponent">Show Timeline</button>
-      <div class="seperator_line"></div>
-      <button class="btn default" @click="downloadCV">Export CV</button>
-    </div>
-
-    <about-me-timeline v-if="showComponentOne"/>
   </div>
 </template>
 
@@ -50,23 +52,10 @@ export default {
   },
   metaInfo: {
     title: "aboutme"
-  },
-  data: () => {
-    return {
-      showComponentOne: false
-    };
-  },
-  methods: {
-    toogleComponent() {
-      this.showComponentOne = !this.showComponentOne;
-    },
-    downloadCV() {
-      console.log("download cv");
-    }
   }
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .title {
   text-align: center;
   margin: 36px auto 24px;

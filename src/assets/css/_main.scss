@@ -1,0 +1,225 @@
+.content-wrapper {
+	transition: background-color .25s;
+}
+
+.container-inner {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+	.container-inner {
+		max-width: 640px;
+	}
+}
+
+@media (min-width: 768px) {
+	.container-inner {
+		max-width: 768px;
+	}
+}
+
+@media (min-width: 1024px) {
+	.container-inner {
+		max-width: 800px;
+	}
+}
+
+/* .checkmark {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg%20width%3D%2229%22%20height%3D%2229%22%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%3E%3Cpath%20d%3D%22M4.427%2024.93A14.5%2014.5%200%201%201%2024.93%204.427c5.495%205.69%205.416%2014.733-.177%2020.326s-14.637%205.672-20.326.177z%22%20fill%3D%22%232E855A%22/%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M10.234%2012.803l3.67%203.253L20.766%2010%2023%2012l-9.096%208L8%2014.789l2.234-2z%22/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    @apply pl-10;
+  } */
+
+.responsive-container {
+	position: relative;
+	overflow: hidden;
+	padding-top: 56.25%;
+}
+
+/*#region Timeline*/
+/*----- TIMELINE ITEM -----*/
+
+.timeline-item {
+	padding-left: 40px;
+	position: relative;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+/*----- TIMELINE INFO -----*/
+
+.timeline-info {
+	font-size: 12px;
+	font-weight: 700;
+	letter-spacing: 3px;
+	margin: 0 0 0.5em 0;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+/*----- TIMELINE MARKER -----*/
+
+.timeline-marker {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	width: 15px;
+
+	&:before {
+		background: var(--timeline_dots);
+		border: 3px solid transparent;
+		border-radius: 100%;
+		content: '';
+		display: block;
+		height: 15px;
+		position: absolute;
+		top: 2px;
+		left: -2px;
+		width: 15px;
+		transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+	}
+
+	&:after {
+		content: '';
+		width: 3px;
+		background: #ccd5db;
+		display: block;
+		position: absolute;
+		top: 24px;
+		bottom: 0;
+		left: 7px;
+	}
+
+	.timeline-item:last-child &:after {
+		content: none;
+	}
+}
+
+.timeline-item:not(.period):hover .timeline-marker:before {
+	background: transparent;
+	border: 3px solid var(--timeline_dots);
+}
+
+/*----- TIMELINE CONTENT -----*/
+
+.timeline-content {
+	padding-bottom: 40px;
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.timeline-content:not(.p):hover {
+	background: rgba(223, 219, 219, 0.356);
+	box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.4s;
+	border-radius: 5px;
+}
+
+/*----- TIMELINE PERIOD -----*/
+
+.period {
+	padding: 0;
+
+	.timeline-info {
+		display: none;
+	}
+
+	.timeline-marker {
+		&:before {
+			background: transparent;
+			content: '';
+			width: 15px;
+			height: auto;
+			border: none;
+			border-radius: 0;
+			top: 0;
+			bottom: 30px;
+			left: 1px;
+			position: absolute;
+			border-top: 3px solid #ccd5db;
+			border-bottom: 3px solid #ccd5db;
+		}
+
+		&:after {
+			content: '';
+			height: 32px;
+			top: auto;
+		}
+	}
+
+	.timeline-content {
+		padding: 40px 0 70px;
+	}
+
+	.timeline-title {
+		margin: 0;
+	}
+}
+
+/*----------------------------------------------
+              MOD: TIMELINE SPLIT
+          ----------------------------------------------*/
+
+.timeline-split {
+	@media (min-width: 768px) {
+		.timeline {
+			display: table;
+		}
+
+		.timeline-item {
+			display: table-row;
+			padding: 0;
+		}
+
+		.timeline-info,
+		.timeline-marker,
+		.timeline-content,
+		.period .timeline-info {
+			display: table-cell;
+			vertical-align: top;
+		}
+
+		.timeline-marker {
+			position: relative;
+		}
+
+		.timeline-content {
+			padding-left: 30px;
+		}
+
+		.timeline-info {
+			padding-right: 30px;
+		}
+
+		.period .timeline-title {
+			position: relative;
+			left: -45px;
+		}
+	}
+}
+
+/*----------------------------------------------
+              MOD: MARKER OUTLINE
+          ----------------------------------------------*/
+
+.marker-outline {
+	.timeline-marker {
+		&:before {
+			background: transparent;
+			border-color: var(--timeline_dots);
+		}
+	}
+
+	.timeline-item:hover .timeline-marker:before {
+		background: var(--timeline_dots);
+		transition: 0.4s;
+	}
+}
+
+/*#endregion */
