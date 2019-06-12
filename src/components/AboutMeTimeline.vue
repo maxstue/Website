@@ -67,7 +67,10 @@
             </li>
           </ul>
         </div>
-      </div>  
+      </div> 
+      <div class="mb-8" >
+        <g-link to="/" class="font-bold uppercase">Back to Home</g-link>
+      </div> 
     </div> 
 </template>
 

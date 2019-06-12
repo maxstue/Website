@@ -64,8 +64,16 @@ export default {
   display: inline-block;
   height: 1px;
   margin-top: 1.5em;
-  width: 10em;
+  width: 10%;
   margin: 0em 1em 0em 1em;
+}
+
+.btn {
+  box-shadow: inset 0 0 0 1px var(--text-copy-secondary);
+  color: inherit !important;
+  border-radius: 4px;
+  padding: 3px;
+  margin: 10px;
 }
 
 .fade-enter-active,
