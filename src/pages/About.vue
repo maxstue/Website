@@ -2,7 +2,7 @@
   <Layout>
     <transition name="fade-button" mode="out-in" v-if="showComponentOne">
       <div class="center_belowTitle">
-        <button class="btn default" @click="toogleComponent">Show Timeline</button>
+        <button class="btn default" @click="toogleComponent">Show text</button>
         <div class="seperator_line"></div>
         <button class="btn default" @click="downloadCV">Export CV</button>
       </div>

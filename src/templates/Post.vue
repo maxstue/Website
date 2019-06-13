@@ -30,6 +30,10 @@ query Post ($path: String!) {
     date (format: "MMMM D, Y")
     content
     path
+    tags {
+      title
+      path
+    }
     fileInfo {
       path
     }

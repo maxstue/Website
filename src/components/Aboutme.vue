@@ -1,22 +1,5 @@
 <template>
   <div>
-    <!-- <div id="one" class="main style1">
-      <div class="container">
-        <div class="row gtr-150">
-          <div class="col-6 col-12-medium">
-            <header class="major">
-              <h2>{{ $static.post.title }}</h2>
-            </header>
-            <div v-html="$static.post.content"/>
-          </div>
-          <div class="col-6 col-12-medium imp-medium">
-            <span class="image fit">
-              <img src="../assets/images/pic01.jpg" alt>
-            </span>
-          </div>
-        </div>
-      </div>
-    </div> -->
     <div class="container-inner mx-auto my-16">
       <h1 class="text-4xl font-bold leading-tight">{{ $static.post.title }}</h1>
       <!-- <div class="text-xl text-gray-600 mb-4">{{ $page.post.date }}</div> -->
