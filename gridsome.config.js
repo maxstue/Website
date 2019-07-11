@@ -27,8 +27,18 @@ module.exports = {
             typeName: 'Tag',
             route: 'tag/:id',
             create: true
+          },
+          tags:{
+            typeName: 'Edu',
+            route: 'edu/:id',
+            create: true
+          },
+          tags:{
+            typeName: 'Career',
+            route: 'career/:id',
+            create: true
           }
-        },
+        }
       }
     },
     {

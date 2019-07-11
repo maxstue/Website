@@ -26,11 +26,9 @@ query Post {
 </static-query>
 
 <script>
-import Layout from "~/layouts/Default.vue";
 import AboutMeTimeline from "../components/AboutMeTimeline.vue";
 export default {
   components: {
-    Layout,
     AboutMeTimeline
   },
   metaInfo: {

@@ -2,7 +2,18 @@
   <Layout>
     <div class="container-inner mx-auto my-16">
       <h1 class="text-4xl font-bold leading-tight">{{ $page.post.title }}</h1>
-      <div class="text-xl text-gray-600 mb-4">{{ $page.post.date }}</div>
+      <div class="mb-8" v-if="$page.post.fileInfo.path.includes('blog/projects')">
+        <div class="text-xl text-gray-600 mb-4">{{ $page.post.startdate }} - {{ $page.post.enddate }}
+          <span> &middot; </span>
+          <span>{{ $page.post.timeToRead }} min read</span>
+        </div>
+      </div>
+      <div class="mb-8" v-else-if="$page.post.fileInfo.path.includes('blog/blog')">
+        <div class="text-xl text-gray-600 mb-4">{{ $page.post.date }}
+          <span> &middot; </span>
+          <span>{{ $page.post.timeToRead }} min read</span>
+        </div>
+      </div>
       <div class="flex mb-8 text-sm">
         <g-link
           :to="tag.path"
@@ -28,8 +39,11 @@ query Post ($path: String!) {
   post: post (path: $path) {
     title
     date (format: "MMMM D, Y")
+    startdate (format: "MMMM D, Y")
+    enddate (format: "MMMM D, Y")
     content
     path
+    timeToRead
     tags {
       title
       path

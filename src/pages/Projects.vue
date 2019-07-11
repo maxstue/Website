@@ -4,7 +4,7 @@
       <div v-for="post in $page.posts.edges" :key="post.id" class="post border-gray-400 border-b mb-12">
         <h2 class="text-3xl font-bold"><g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link></h2>
         <div class="text-copy-secondary mb-4">
-          <span>{{ post.node.date }}</span>
+          <span>{{ post.node.startdate }} - </span> <span>{{ post.node.enddate }}</span>
           <span> &middot; </span>
           <span>{{ post.node.timeToRead }} min read</span>
         </div>
@@ -38,7 +38,7 @@
 
 <page-query>
 query Post {
-  posts: allPost (sortBy:"date", order: DESC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
+  posts: allPost (sort:[{by: "enddate"},{by: "startdate"}], order: DESC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
     totalCount
     pageInfo {
       totalPages
@@ -49,7 +49,8 @@ query Post {
         id
         title
         content
-        date (format: "MMMM D, Y")
+        startdate (format: "MMMM D, Y")
+        enddate (format: "MMMM D, Y")
         path
         featuredImage
         timeToRead

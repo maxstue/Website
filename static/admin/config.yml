@@ -7,6 +7,7 @@ media_folder: "static/uploads"
 public_folder: "uploads"
 
 collections:
+  
   - name: "blog" # Used in routes, e.g., /admin/collections/blog
     label: "Blog" # Used in the UI
     folder: "blog/blog" # The path to the folder where the documents are stored
@@ -20,6 +21,7 @@ collections:
       - {label: "Summary", name: "summary", widget: "markdown", required: false}
       - {label: "Type", name: "type", widget: "hidden", default: "post"}
       - {label: "Tags", name: "tags", widget: "list", default: ["rest"]}
+
   - name: "aboutme"
     label: "Aboutme"
     folder: "blog/aboutMe"
@@ -30,6 +32,7 @@ collections:
       - {label: "Featured Image", name: "featuredImage", widget: "image",required: false}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Summary", name: "summary", widget: "markdown"}
+
   - name: "projects" # Used in routes, e.g., /admin/collections/blog
     label: "Projects" # Used in the UI
     folder: "blog/projects" # The path to the folder where the documents are stored
@@ -38,7 +41,30 @@ collections:
     fields: # The fields for each document, usually in front matter
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Featured Image", name: "featuredImage", widget: "image", required: false}
-      - {label: "Publish Date", name: "date", widget: "date"}
+      - {label: "Start Date", name: "startdate", widget: "date"}
+      - {label: "End Date", name: "enddate", widget: "date"}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Summary", name: "summary", widget: "markdown", required: false}
       - {label: "Tags", name: "tags", widget: "list", default: ["test"]}
+
+  - name: "education" # Used in routes, e.g., /admin/collections/blog
+    label: "Education" # Used in the UI
+    folder: "blog/aboutMe/education" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Start Date", name: "startdate", widget: "date"}
+      - {label: "End Date", name: "enddate", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown" }
+
+  - name: "career" # Used in routes, e.g., /admin/collections/blog
+    label: "Career" # Used in the UI
+    folder: "blog/aboutMe/career" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Start Date", name: "startdate", widget: "date"}
+      - {label: "End Date", name: "enddate", widget: "date"}
+      - {label: "Body", name: "body", widget: "markdown" }
