@@ -1,69 +1,80 @@
 <template>
   <Layout>
-    <div id="three" class="main style1 special">
-      <div class="container">
-        <header class="major">
-          <h1 class="title">{{title}}</h1>
-          <div class="center_belowTitle">
-            <button class="btn default" @click="toogleComponent">List view</button>
-            <div class="seperator_line"></div>
-            <button class="btn default" @click="toogleComponent">Timeline view</button>
-          </div>
-        </header>
-        <projects v-if="showComponentOne"/>
-        <projects-timeline v-if="showComponentTwo"/>
+    <div class="container-inner mx-auto py-16">
+      <div v-for="post in $page.posts.edges" :key="post.id" class="post border-gray-400 border-b mb-12">
+        <h2 class="text-3xl font-bold"><g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link></h2>
+        <div class="text-copy-secondary mb-4">
+          <span>{{ post.node.date }}</span>
+          <span> &middot; </span>
+          <span>{{ post.node.timeToRead }} min read</span>
+        </div>
+
+        <div
+          class="text-lg mb-4"
+          v-if="post.node.content.length < 200"
+          v-html="post.node.content + ' ...' "
+        ></div>
+        <div
+          class="text-lg mb-4"
+          v-if="post.node.content.length >= 200"
+          v-html="post.node.content.substring(0,300) + ' ...' "
+        ></div>
+
+        <div class="mb-8">
+          <g-link :to="post.node.path" class="font-bold uppercase">Read More</g-link>
+        </div>
       </div>
+      <!-- end post -->
+
+      <pagination-posts
+        v-if="$page.posts.pageInfo.totalPages > 1"
+        base="/blog"
+        :totalPages="$page.posts.pageInfo.totalPages"
+        :currentPage="$page.posts.pageInfo.currentPage"
+      />
     </div>
   </Layout>
 </template>
 
+<page-query>
+query Post {
+  posts: allPost (sortBy:"date", order: DESC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
+    totalCount
+    pageInfo {
+      totalPages
+      currentPage
+    }
+    edges {
+      node {
+        id
+        title
+        content
+        date (format: "MMMM D, Y")
+        path
+        featuredImage
+        timeToRead
+        fileInfo {
+          directory
+        }
+      }
+    }
+  }
+}
+</page-query>
 
 
 <script>
-  import Projects from "../components/Projects.vue";
-  import ProjectsTimeline from "../components/ProjectTimeline.vue";
-  export default {
-    components: {
-      Projects,
-      ProjectsTimeline
-    },
-    metaInfo: {
-      title: "projects"
-    },
-    data: () => {
-      return {
-        title: "Projects",
-        showComponentOne: true,
-        showComponentTwo: false
-      };
-    },
-    methods: {
-      toogleComponent() {
-        this.showComponentOne = !this.showComponentOne;
-        this.showComponentTwo = !this.showComponentTwo;
-      }
-    },
-    mounted() {
-      console.log("projects mounted");
-    }
-  };
+import PaginationPosts from '../components/PaginationPosts'
+
+export default {
+  metaInfo: {
+    title: 'Projekte'
+  },
+  components: {
+    PaginationPosts
+  }
+}
+
+
 </script>
 
-<style lang="scss" scoped>
-  .title {
-    text-align: center;
-    margin: 36px auto 24px;
-    font-size: 43px;
-    font-weight: bold;
-  }
-
-  .resizePic {
-    width: 368px;
-    height: 240px;
-  }
-
-  h3 {
-    text-decoration: none;
-    color: var(--text-greyish);
-  }
-</style>

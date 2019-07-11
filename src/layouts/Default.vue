@@ -1,102 +1,114 @@
 <template>
-  <div class="wrapper">
-    <header id="header">
-      <div class="nav">
-        <nav>
-          <strong>
-            <g-link id="symbol" to="/">MS</g-link>
-          </strong>
-          <ul class="mainbar navUl">
-            <li class="nav__link">
-              <g-link to="/">Home</g-link>
-            </li>
-            <li class="nav__link">
-              <g-link to="/projects">Projects</g-link>
-            </li>
-            <li class="nav__link">
-              <g-link to="/blog">Blog</g-link>
-            </li>
-            <li class="nav__link">
-              <g-link to="/about">About me</g-link>
-            </li>
-          </ul>
-        </nav>
-        <div class="menu-wrap">
-          <input type="checkbox" class="toggler">
-          <div class="hamburger">
-            <!-- <i class="fas fa-bars"></i> -->
-            <div></div>
-          </div>
-          <div class="menu">
-            <div>
-              <div>
-                <ul>
-                  <li>
-                    <g-link to="/">Home</g-link>
-                  </li>
-                  <li>
-                    <g-link to="/projects">Projects</g-link>
-                  </li>
-                  <li>
-                    <g-link to="/blog">Blog</g-link>
-                  </li>
-                  <li>
-                    <g-link to="/about">About me</g-link>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+  <div
+    class="content-wrapper bg-background-primary font-sans text-copy-primary leading-normal flex flex-col min-h-screen"
+    :class="theme"
+  >
+    <!-- Header -->
+    <header class="border-t-14 border-blue-400">
+      <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
+        <div>
+          <g-link v-if="theme === 'theme-light'" to="/">
+            <g-image src="../../src/assets/images/logo.svg" class="w-40" alt="logo"/>
+          </g-link>
+          <g-link v-else to="/">
+            <g-image src="../../src/assets/images/logo_dark_mode.svg" class="w-40" alt="logo"/>
+          </g-link>
         </div>
-      </div>
-      <div class="seperator_line_full"></div>
+        <div class="block lg:hidden">
+          <button
+            @click="toggle"
+            class="flex items-center px-3 py-2 border rounded border-gray-500 hover:text-gray-600 hover:border-gray-600"
+          >
+            <svg
+              class="current-color h-3 w-3"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" fill="gray"></path>
+            </svg>
+          </button>
+        </div>
+        <ul
+          class="uppercase tracking-wide font-bold w-full block flex-grow lg:flex lg:flex-initial lg:w-auto items-center mt-8 lg:mt-0"
+          :class="isOpen ? 'block': 'hidden'"
+        >
+          <!-- <li class="mr-8 mb-6 lg:mb-0">
+            <search-input/>
+          </li>-->
+          <li class="mr-8 mb-6 lg:mb-0">
+            <theme-switcher :theme="theme" @themeChanged="updateTheme"/>
+          </li>
+          <li class="mr-8 mb-6 sm:mb-0">
+            <g-link class="text-copy-primary hover:text-blue-400" to="/">Home</g-link>
+          </li>
+          <li class="mr-8 mb-6 sm:mb-0">
+            <g-link class="text-copy-primary hover:text-blue-400" to="/projects">Projects</g-link>
+          </li>
+          <li class="mr-8 mb-6 sm:mb-0">
+            <g-link class="text-copy-primary hover:text-blue-400" to="/blog">Blog</g-link>
+          </li>
+          <li class="mr-8 mb-6 sm:mb-0">
+            <g-link class="text-copy-primary hover:text-blue-400" to="/about">About me</g-link>
+          </li>
+        </ul>
+      </nav>
     </header>
-    <div class="content">
-      <!-- <progress-bar :value="progress"/> -->
-      <!-- <div class="text-section" ref="text"> -->
-        <!-- Body -->
-        <transition name="fade" appear>
-          <main>
-            <slot/>
-          </main>
-        </transition>
-      <!-- </div> -->
+
+    <!-- Body -->
+    <div class="flex-grow">
+      <transition name="fade" appear>
+        <main> <!-- a wrapper for slot is needed -->
+          <slot /> <!-- the content -->
+        </main>
+      </transition>
     </div>
 
     <!-- Footer -->
-    <footer id="footer">
-      <!-- <div class="seperator_line_full"></div> -->
-      <ul class="icons">
-        <li>
-          <a href="https://github.com/lTimeless" target="_blank" class="icon">
-            <i class="fab fa-github"></i>
-          </a>
-        </li>
-        <li>
-          <a href="https://gitlab.com/Imaximilian?nav_source=navbar" target="_blank" class="icon">
-            <i class="fab fa-gitlab"></i>
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.xing.com/profile/Maximilian_Stuempfl/cv?sc_o=mxb_p"
-            target="_blank"
-            class="icon"
-          >
-            <i class="fab fa-xing"></i>
-          </a>
-        </li>
-        <li>
-          <a href="mailto:maximilian.stuempfl@t-online.de" target="_blank" class="icon">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </li>
-      </ul>
-      <ul class="copyright">
-        <li>&copy; Maximilian Stümpfl</li>
-        <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-      </ul>
+    <footer class="bg-blue-400 text-white">
+      <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-6">
+        <div class="mb-8 lg:mb-0">
+          <div>Copyright 2019. All rights reserved. | Maximilian Stümpfl</div>
+        </div>
+        <ul class="flex items-center">
+          <li class="mr-8">
+            <a href="mailto:maximilian.stuempfl@t-online.de" class="text-white hover:text-gray-400">
+              <svg width="25" height="20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.5 0h20A2.5 2.5 0 0 1 25 2.5v15a2.5 2.5 0 0 1-2.5 2.5h-20A2.5 2.5 0 0 1 0 17.5v-15C0 1.125 1.125 0 2.5 0zm20 4.225V2.5h-20v1.725l10 5 10-5zm0 2.8l-9.438 4.713a1.25 1.25 0 0 1-1.124 0L2.5 7.025V17.5h20V7.025z"
+                  fill-rule="nonzero"
+                ></path>
+              </svg>
+            </a>
+          </li>
+
+          <li class="mr-8">
+            <a
+              href="https://github.com/lTimeless"
+              target="_blank"
+              class="text-white hover:text-gray-400"
+            >
+              <svg width="20" height="19" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10 0c1.814 0 3.487.435 5.02 1.306a9.827 9.827 0 0 1 3.639 3.542A9.33 9.33 0 0 1 20 9.734c0 2.121-.636 4.03-1.908 5.723a9.783 9.783 0 0 1-4.928 3.518c-.234.042-.408.012-.52-.09a.49.49 0 0 1-.17-.38l.006-.969c.005-.621.007-1.19.007-1.705 0-.82-.226-1.42-.677-1.8.495-.05.94-.126 1.335-.228a5.4 5.4 0 0 0 1.223-.494 3.62 3.62 0 0 0 1.055-.843c.282-.334.512-.777.69-1.33.178-.554.267-1.19.267-1.909a3.7 3.7 0 0 0-1.028-2.61c.32-.77.286-1.631-.105-2.586-.243-.076-.594-.03-1.054.14-.46.168-.86.354-1.198.557l-.495.304a9.478 9.478 0 0 0-2.5-.33c-.86 0-1.693.11-2.5.33a11.6 11.6 0 0 0-.553-.342c-.23-.135-.593-.298-1.088-.488-.494-.19-.863-.247-1.106-.171-.391.955-.426 1.816-.105 2.585A3.7 3.7 0 0 0 3.62 9.227c0 .719.089 1.352.267 1.902.178.549.406.993.683 1.33.278.339.627.622 1.048.85a5.4 5.4 0 0 0 1.224.494c.395.102.84.178 1.335.228-.338.305-.551.74-.638 1.306a2.631 2.631 0 0 1-.586.19 3.782 3.782 0 0 1-.742.063c-.287 0-.57-.09-.853-.272a2.256 2.256 0 0 1-.723-.792 2.068 2.068 0 0 0-.631-.66c-.256-.168-.471-.27-.645-.304l-.26-.038c-.182 0-.308.02-.378.057-.07.038-.09.087-.065.146.026.06.065.118.117.178.053.059.109.11.17.152l.09.063c.192.085.38.245.567.482.187.236.324.452.41.646l.13.292c.113.32.304.58.574.78.269.198.56.325.872.38.312.054.614.084.905.088.29.004.532-.01.723-.044l.299-.05c0 .32.002.694.007 1.12l.006.692a.49.49 0 0 1-.17.38c-.112.101-.286.13-.52.089a9.783 9.783 0 0 1-4.928-3.518C.636 13.763 0 11.855 0 9.734a9.33 9.33 0 0 1 1.341-4.886 9.827 9.827 0 0 1 3.64-3.542C6.512.436 8.185 0 10 0zM3.79 13.98c.025-.058-.005-.11-.092-.151-.087-.026-.143-.017-.17.025-.025.06.005.11.092.152.078.05.134.042.17-.025zm.403.432c.06-.043.052-.11-.026-.203-.087-.076-.157-.089-.209-.038-.06.042-.052.11.026.203.087.084.157.097.209.038zm.39.57c.078-.06.078-.14 0-.24-.07-.11-.143-.136-.221-.077-.078.042-.078.118 0 .228.078.11.152.14.221.089zm.547.532c.07-.067.052-.148-.052-.24-.104-.102-.19-.115-.26-.039-.078.068-.061.148.052.241.104.102.19.114.26.038zm.742.317c.026-.093-.03-.16-.169-.203-.13-.033-.213-.004-.247.09-.035.092.021.155.169.19.13.05.213.025.247-.077zm.82.064c0-.11-.073-.157-.22-.14-.14 0-.209.047-.209.14 0 .11.074.156.221.139.14 0 .209-.046.209-.14zm.756-.127c-.017-.093-.096-.131-.234-.114-.14.025-.2.088-.183.19.018.101.096.135.235.101.139-.034.2-.093.182-.177z"
+                  fill-rule="nonzero"
+                ></path>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
     </footer>
+
+    <div style="display:none">
+      <svg id="dots-triangle" width="170" height="170" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M168.152 170a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm-18.478-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm-18.478 0a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.479a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm-18.479 0a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0 18.479a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zM94.24 133.043a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0 18.479a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm-18.478 36.956a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0 18.479a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm-18.478 55.434a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0 18.479a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.479a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm-18.479 73.913a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0 18.479a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.479a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm-18.478 92.391a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0 18.479a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.479a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zM1.848 133.044a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.695zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0 18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-55.435a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.479a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.695 1.848 1.848 0 0 1 0 3.695zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696zm0-18.478a1.848 1.848 0 1 1 0-3.696 1.848 1.848 0 0 1 0 3.696z"
+          fill="#2C8056"
+          fill-rule="evenodd"
+          opacity=".503"
+        ></path>
+      </svg>
+    </div>
   </div>
 </template>
 
@@ -109,126 +121,66 @@ query {
 </static-query>
 
 <script>
-  // import ProgressBar from "../components/ProgressBar";
+import ThemeSwitcher from "../components/ThemeSwitcher";
 
-  export default {
-    components: {
-      // ProgressBar
+export default {
+  components: {
+    ThemeSwitcher
+  },
+  mounted() {
+    this.theme = localStorage.getItem("theme") || "theme-light";
+  },
+  data() {
+    return {
+      isOpen: false,
+      theme: ""
+    };
+  },
+  methods: {
+    toggle() {
+      this.isOpen = !this.isOpen;
     },
-    data: () => {
-      return {
-        progress: 0
-      };
-    },
-    methods: {
-      //   onScroll() {
-      //     const progress = this.$refs.text.scrollTop / (this.$refs.text.scrollHeight - this.$refs.text.clientHeight);
-      //     console.log(progress);
-      //     console.log(this.$refs.text.scrollHeight);
-      //     console.log(this.$refs.text.clientHeight);
-      //     console.log(this.$refs.text.scrollTop );
-      //     if (progress > 1) {
-      //       this.progress = 1;
-      //     } else if (progress < 0) {
-      //       this.progress = 0;
-      //     } else {
-      //       this.progress = progress;
-      //     }
-      //   }
-      // },
-      // created: function () {
-      //     window.addEventListener('scroll', this.onScroll);
-      // },
-      // destroyed: function () {
-      //     window.removeEventListener('scroll', this.onScroll);
+    updateTheme(theme) {
+      this.theme = theme;
     }
-  };
+  }
+};
 </script>
 
-<style scoped>
-  .wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-  }
 
-  .content {
-    flex: 1 0 auto;
-  }
 
-  #symbol {
-    font-size: 40px;
-    letter-spacing: 1vh;
-    color: inherit;
-    margin: 0 0 0 0em;
-    color: inherit;
-    text-decoration: none;
-  }
+<style>
+.fade-enter-active {
+  transition: opacity .6s;
+}
 
-  .fade-enter-active {
-    transition: opacity 0.8s;
-  }
+.fade-enter {
+  opacity: 0;
+}
+/* body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+}
 
-  .fade-enter {
-    opacity: 0;
-  }
+.layout {
+  max-width: 760px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
-  nav {
-    display: flex;
-    justify-content: space-evenly;
-  }
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  height: 80px;
+}
 
-  .mainbar {
-    padding-left: 1em;
-  }
-
-  .nav__link {
-    margin-left: 20px;
-    text-decoration: none;
-    color: inherit;
-  }
-  a:-webkit-any-link {
-    color: inherit;
-    cursor: pointer;
-    text-decoration: none;
-  }
-
-  .mainbar .nav__link {
-    padding-left: 2em;
-    font-size: 24px;
-    list-style: none;
-    display: inline-block;
-  }
-
-  .navUl {
-    position: relative;
-    display: flex;
-    margin: 0 1em 0 0;
-  }
-
-  .mainbar:hover a {
-    opacity: 0.5;
-  }
-
-  .mainbar li a:hover {
-    opacity: 1;
-    /* color: var(--primary-color); */
-    text-decoration: underline;
-    text-decoration-color: var(--secondaryB-color);
-
-  }
-
-  .icon:hover {
-    color: var(--secondary-color) !important;
-  }
-
-  .seperator_line_full {
-    background: rgba(144, 144, 144, 0.5);
-    content: "";
-    display: inline-block;
-    height: 0.7px;
-    margin-top: 1.5em;
-    width: 75em;
-    margin: 0em 1em 0em 1em;
-  }
+.nav__link {
+  margin-left: 20px;
+} */
 </style>

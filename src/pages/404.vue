@@ -1,15 +1,9 @@
 <template>
   <Layout>
-    
-    <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135" />
-    
-    <h1>I am Sorry,but something went wrong!</h1>
-   
-    <p>
-        Error Code 404
-    </p>
-    <!-- TODO: hier fancy funny 404 page machen  -->
+    <div class="container-inner mx-auto py-16">
+      <h2 class="text-4xl font-bold mb-16">Page Not Found</h2>
+      <g-image src="../assets/images/404.svg" />
+    </div>
 
   </Layout>
 </template>
@@ -17,13 +11,8 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Page Not Found'
   }
 }
 </script>
 
-<style>
-.home-links a {
-  margin-right: 1rem;
-}
-</style>

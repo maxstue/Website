@@ -1,3 +1,4 @@
-@import 'main.scss';
-@import 'variables';
-@import '../../../node_modules/@fortawesome/fontawesome-free/css/all.css';
+@import '_main.scss';
+@import '_variables.scss';
+@import '_theme.scss';
+@import 'tailwind.css'

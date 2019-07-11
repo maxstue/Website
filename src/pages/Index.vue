@@ -1,152 +1,97 @@
 <template>
   <Layout>
-    <!-- One -->
-    <div id="one" class="main style1">
-      <div class="container">
-        <div class="row gtr-150">
-          <div class="col-6 col-12-medium">
-            <header class="major">
-              <h2 data-splitting class="fall-down" id="type"></h2>
-              <br>
-            </header>
-            <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
-          </div>
-          <div class="col-6 col-12-medium imp-medium">
-            <g-image class="image fit" src="../assets/images/pic01.jpg" fit="contain"/>
-          </div>
+    <div class="hero container-inner mx-auto flex flex-col sm:flex-row justify-between py-16">
+      <div class="text-4xl font-bold w-full sm:w-3/5 text-center sm:text-left">
+        <div class="leading-tight" id="type"></div>
+        <!-- <div class="text-green-700 leading-tight">Powered by Vue.js &amp; Tailwind 1.0</div> -->
+      </div>
+      <div class="mt-8 sm:mt-0">
+        <g-image src="../assets/images/developer.svg" alt="hero" class="mx-auto sm:mx-0"/>
+      </div>
+    </div>
+    <!-- end hero -->
+
+    <div class="container-inner mx-auto">
+      <p class="text-lg sm:text-xl">
+        This gridsome theme was forked from my
+        <a href="https://andremadarang.com">personal website</a>. I added more features and decided to release it as an open source project. Check it out on
+        <a
+          href="https://github.com/drehimself/gridsome-portfolio-starter"
+        >GitHub</a> or check out the
+        <a href="https://www.youtube.com/watch?v=uHo6o1TNQeE">screencast I did</a>. Feel free to use it for your own site or projects! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima, repellat. Dolores iure, quas perspiciatis rerum quaerat atque eum repellat autem.
+      </p>
+
+      <div class="flex justify-between items-center py-6">
+        <div class="w-full sm:w-1/2 px-8 py-8 sm:py-0">
+          <g-image src="../assets/images/mind_map.svg" alt="browser"/>
+        </div>
+        <div class="w-1/2 px-8 hidden sm:flex justify-end">
+          <g-image src="../assets/images/code_review.svg" alt="mobile"/>
         </div>
       </div>
     </div>
 
-    <!-- Two -->
+    <div class="overflow-x-hidden">
+      <div
+        class="projects container-inner mx-auto text-xl border-t border-gray-500 border-b py-16 mb-16 relative"
+      >
+        <h2 class="font-bold mb-6" id="projects">Here are some projects I've worked on:</h2>
 
-    <section id="two " class="main style2">
-      <h2 class="title">My Skills </h2>
-      <div class="container">
-        <div class="skillContainer">
-          <div class="wrapper">
-            <div class="tleft">.Net/ c#</div>
-            <div class="trightNet">90%</div>
-          </div>
-          <div class="skills csharp"></div>
+        <div class="absolute right-0" style="top: 50px; transform: translate(100%) rotate(180deg)">
+          <svg width="170px" height="170px">
+            <use xlink:href="#dots-triangle"></use>
+          </svg>
         </div>
-        <div class="skillContainer">
-          <div class="wrapper">
-            <div class="tleft">Vue.js</div>
-            <div class="trightVue">70%</div>
-          </div>
-          <div class="skills vue"></div>
-        </div>
-        <div class="skillContainer">
-          <div class="wrapper">
-            <div class="tleft">Unity</div>
-            <div class="trightUnity">60%</div>
-          </div>
-          <div class="skills unity"></div>
-        </div>
-        <div class="skillContainer">
-          <div class="wrapper">
-            <div class="tleft">C++</div>
-            <div class="trightC--">40%</div>
-          </div>
-          <div class="skills c--"></div>
-        </div>
-        <div class="skillContainer">
-          <div class="wrapper">
-            <div class="tleft">Typescript / javascript</div>
-            <div class="trightTS">70%</div>
-          </div>
-          <div class="skills vue"></div>
-        </div>
-      </div>
-    </section>
-    <!-- <section id="two" class="main style2">
-      <div class="container">
-        <div class="row gtr-150">
-          <div class="col-3 col-12-medium rel">
-            <ul class="major-icons">
-              <li>
-                <span class="icon style1 major">
-                  <i class="fas fa-code fa-5x" style="color: #c3e895;"></i>
-                </span>
-              </li>
-              <li>
-                <span class="icon style1 major">
-                  <i class="fas fa-code-branch fa-5x" style="color: #8addaa;"></i>
-                </span>
-              </li>
-              <li>
-                <span class="icon style1 major">
-                  <i class="fas fa-bolt fa-5x" style="color: #57aed3;"></i>
-                </span>
-              </li>
-              <li>
-                <span class="icon style1 major">
-                  <i class="fas fa-desktop fa-5x" style="color: #4a87d3;"></i>
-                </span>
-              </li>
-            </ul>
-          </div>
-          <div class="col-6 col-12-medium">
-            <header class="major">
-              <h2>
-                Lorem ipsum dolor adipiscing
-                <br>amet dolor consequat
-              </h2>
-            </header>
-            <p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-            <p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-            <p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-          </div>
-        </div>
-      </div>
-    </section>-->
 
-    <!-- Three -->
-    <section id="three" class="main style1 special">
-      <div class="container">
-        <header class="major title">
-          <h2>Latest Projects</h2>
-        </header>
-        <!-- every project  -->
-        <div class="row gtr-150">
-          <div v-for="project in $page.projects.edges" :key="project.node.id">
-            <g-link :to="project.node.path">
-              <div class="col-4 col-12-medium card">
-                <!-- <span class="image resizePic"> -->
-                <g-image
-                  class="image resizePic"
-                  v-if="project.node.featuredImage"
-                  :src="project.node.featuredImage"
-                  fit="contain"
-                />
-                <g-image
-                  class="image resizePic"
-                  v-else
-                  src="../assets/images/pic02.jpg"
-                  fit="contain"
-                />
-                <!-- </span> -->
-                <h3 class="title">{{project.node.title}}</h3>
-                <!-- <ul class="actions special">
-                <li>
-                  <a class="button">
-                    <g-link :to="project.node.path">Go to</g-link>
-                  </a>
-                </li>
-                </ul>-->
-              </div>
+        <ul class="text-lg sm:text-xl">
+          <li class="checkmark mb-6" v-for="post in $page.posts.edges" :key="post.id">
+            <g-link :to="post.node.path">
+              <div>{{post.node.title}}</div>
+              <div class="text-lg text-gray-600" v-html="post.node.content.substring(0,100)"></div>
             </g-link>
+          </li>
+        </ul>
+      </div>
+      <!-- end projects -->
+    </div>
+
+    <div class="overflow-x-hidden border-gray-200 border-b">
+      <div class="get-to-know-me container-inner mx-auto text-xl pb-16 relative">
+        <h2 class="font-bold mb-6" id="about">Get to know me:</h2>
+
+        <div class="absolute left-0" style="top: 50px; transform: translateX(-100%)">
+          <svg width="170px" height="170px">
+            <use xlink:href="#dots-triangle"></use>
+          </svg>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center mb-16">
+          <div>
+            <g-image
+              src="../assets/images/avatar.jpg"
+              alt="avatar"
+              class="w-32 h-32 rounded-full mb-8 lg:mb-0"
+            />
           </div>
+          <div
+            class="flex-1 text-lg sm:text-xl ml-6"
+          >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum quae architecto minus molestias iusto ducimus fuga quo quia libero dignissimos, fugiat modi assumenda debitis laboriosam.</div>
         </div>
       </div>
-    </section>
+      <!-- end get-to-know me -->
+    </div>
   </Layout>
 </template>
 
+
 <page-query>
-query Peoject {
-  projects: allPost (sortBy:"date", order: ASC, filter: {fileInfo: {directory: {regex: "blog/projects"}}}) {
+query Post {
+  posts: allPost(
+    sortBy: "date"
+    order: ASC
+    limit: 4
+    filter: { fileInfo: { directory: { regex: "blog/projects" } } }
+  ) {
     edges {
       node {
         id
@@ -155,6 +100,7 @@ query Peoject {
         date
         path
         featuredImage
+        timeToRead
         fileInfo {
           directory
         }
@@ -164,87 +110,39 @@ query Peoject {
 }
 </page-query>
 
-<script >
-  import * as Sentry from "@sentry/browser";
-  // import "splitting/dist/splitting.css";
-  // import "splitting/dist/splitting-cells.css";
-  // import Splitting from "splitting";
+<script>
+import * as Sentry from "@sentry/browser";
 
-  export default {
-    metaInfo: {
-      title: "Home"
-    },
-    data() {
-      return {
-        title: " Hello I'm Maximilian Stümpfl",
-        speed: 90,
-        wordCounter: 0
-      };
-    },
-    mounted() {
-      // Splitting();
-      console.log("home mounted");
-      Sentry.captureMessage("Home mounted test");
-      this.typeWriter();
-    },
-    methods: {
-      typeWriter() {
-        if (this.wordCounter < this.title.length) {
-          document.getElementById("type").innerHTML += this.title.charAt(
-            this.wordCounter
-          );
-          this.wordCounter++;
-          setTimeout(this.typeWriter, this.speed);
-        }
+export default {
+  metaInfo: {
+    title: "Home"
+  },
+  data() {
+    return {
+      title: " Hello I'm Maximilian Stümpfl",
+      speed: 90,
+      wordCounter: 0
+    };
+  },
+  mounted() {
+    // Splitting();
+    console.log("home mounted");
+    Sentry.captureMessage("Home mounted test.. New Design");
+    this.typeWriter();
+  },
+  methods: {
+    typeWriter() {
+      if (this.wordCounter < this.title.length) {
+        document.getElementById("type").innerHTML += this.title.charAt(
+          this.wordCounter
+        );
+        this.wordCounter++;
+        setTimeout(this.typeWriter, this.speed);
       }
     }
-  };
+  }
+};
 </script>
 
-<style lang="scss" scoped>
-  .home-links a {
-    margin-right: 1rem;
-  }
-  .image {
-    display: block;
-    margin: 0 auto;
-  }
-
-  .title {
-    text-align: center;
-    margin: 36px auto 24px;
-    color: black !important;
-  }
-
-  .rel {
-    position: relative;
-  }
-
-  .resizePic {
-    width: 368px;
-  }
-
-  h3 {
-    text-decoration: none;
-    color: var(--text-greyish);
-  }
-
-  .fall-down .words {
-    .char {
-      animation: slide-down 5s forwards;
-      // animation-delay: calc(0.5s + (0.1s * 0.5));
-      opacity: 0;
-
-      @keyframes slide-down {
-        from {
-          transform: translateY(125%);
-          opacity: 0;
-        }
-        to {
-          transform: translateY(0%);
-          opacity: 1;
-        }
-      }
-    }
-  }
+<style>
 </style>

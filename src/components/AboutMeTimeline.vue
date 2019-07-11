@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-inner mx-auto my-16">
       <div class="example-split">
         <div class="col-md-12 example-title">
           <h2>Education</h2>
@@ -67,7 +67,10 @@
             </li>
           </ul>
         </div>
-      </div>  
+      </div> 
+      <div class="mb-8" >
+        <g-link to="/" class="font-bold uppercase">Back to Home</g-link>
+      </div> 
     </div> 
 </template>
 
@@ -109,7 +112,7 @@ query Post {
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss"  scoped>
   .title {
     text-align: center;
     margin: 36px auto 24px;
