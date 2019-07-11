@@ -1,6 +1,7 @@
 ---
 title: bcm Solutions GmbH
-date: 2018-12-01T17:22:02.319Z
+startdatecar: 2018-04-01T16:27:08.785Z
+enddatecar: 2019-12-01T17:27:08.794Z
 ---
 Werkstudent
 
