@@ -1,23 +1,32 @@
 <template>
   <Layout>
     <div class="container-inner mx-auto py-16">
-      <div v-for="post in $page.posts.edges" :key="post.id" class="post border-gray-400 border-b mb-12">
-        <h2 class="text-3xl font-bold"><g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link></h2>
+      <div
+        v-for="post in $page.posts.edges"
+        :key="post.id"
+        class="post border-gray-400 border-b mb-12"
+      >
+        <h2 class="text-3xl font-bold">
+          <g-link :to="post.node.path" class="text-copy-primary">{{ post.node.title }}</g-link>
+        </h2>
         <div class="text-copy-secondary mb-4">
-          <span>{{ post.node.startdate }} - </span> <span>{{ post.node.enddate }}</span>
-          <span> &middot; </span>
-          <span>{{ post.node.timeToRead }} min read</span>
+          <span v-if="post.node.enddate == 'Invalid date'">today - </span>
+          <span v-else>{{post.node.enddate}}</span>
+
+          <span class="startdate">{{post.node.startdate}}</span>
+          <span> &middot;</span>
+          <span> {{ post.node.timeToRead }} min read</span>
         </div>
 
         <div
           class="text-lg mb-4"
           v-if="post.node.content.length < 200"
-          v-html="post.node.content + ' ...' "
+          v-html="post.node.content "
         ></div>
         <div
           class="text-lg mb-4"
           v-if="post.node.content.length >= 200"
-          v-html="post.node.content.substring(0,300) + ' ...' "
+          v-html="post.node.content.substring(0,300) "
         ></div>
 
         <div class="mb-8">
@@ -52,7 +61,6 @@ query Post {
         startdate (format: "MMMM D, Y")
         enddate (format: "MMMM D, Y")
         path
-        featuredImage
         timeToRead
         fileInfo {
           directory
@@ -65,17 +73,15 @@ query Post {
 
 
 <script>
-import PaginationPosts from '../components/PaginationPosts'
+import PaginationPosts from "../components/PaginationPosts";
 
 export default {
   metaInfo: {
-    title: 'Projekte'
+    title: "Projekte"
   },
   components: {
     PaginationPosts
   }
-}
-
-
+};
 </script>
 

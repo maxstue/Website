@@ -18,12 +18,12 @@
         <div
           class="text-lg mb-4"
           v-if="post.node.content.length < 200"
-          v-html="post.node.content + ' ...' "
+          v-html="post.node.content "
         ></div>
         <div
           class="text-lg mb-4"
           v-if="post.node.content.length >= 200"
-          v-html="post.node.content.substring(0,300) + ' ...' "
+          v-html="post.node.content.substring(0,300) "
         ></div>
 
         <div class="mb-8">

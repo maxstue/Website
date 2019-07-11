@@ -1,7 +1,7 @@
 <template>
-    <div class="example-split">
-      <div class="col-md-12 example-title">
-        <h2>Education</h2>
+    <div >
+      <div class="col-md-12 mb-6">
+        <h2 class="font-bold text-lg">Education</h2>
       </div>
       <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
         <ul class="timeline timeline-split">
@@ -65,19 +65,17 @@ export default {
 </script>
 
 <style lang="scss"  scoped>
-.title {
-  text-align: center;
-  margin: 36px auto 24px;
-  font-size: 43px;
-  font-weight: bold;
-}
+// h2 {
+//   font-size: 16px;
+//   font-weight: bold;
+// }
 
 .resizePic {
   width: 368px;
   height: 240px;
 }
 
-h3 {
+.title {
   text-decoration: none;
   color: var(--text-greyish);
 }

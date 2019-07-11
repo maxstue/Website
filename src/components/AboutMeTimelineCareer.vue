@@ -1,7 +1,7 @@
 <template>
-    <div class="example-split">
-      <div class="col-md-12 example-title">
-        <h2>Career</h2>
+    <div >
+      <div class="col-md-12 mb-6">
+        <h2 class="font-bold text-lg">Career</h2>
       </div>
       <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
         <ul class="timeline timeline-split">
