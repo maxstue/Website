@@ -54,3 +54,7 @@ jspm_packages/
 # IDE
 .idea
 .vscode
+
+
+_old/
+dist/
