@@ -17,17 +17,20 @@ module.exports = {
         primary: 'var(--bg-background-primary)',
         secondary: 'var(--bg-background-secondary)',
         tertiary: 'var(--bg-background-tertiary)',
+        footerHeader: 'var(--bg-background-fh)',
 
-        form: 'var(--bg-background-form)',
+        tag: 'var(--bg-background-tag)',
       },
 
+      // text farben
       copy: {
         primary: 'var(--text-copy-primary)',
-        secondary: 'var(--text-copy-hover)',
+        secondary: 'var(--text-copy-secondary)',
       },
-
-      'border-color': {
-        primary: 'var(--border-border-color-primary)',
+      // //border 
+      'color': {
+        primary: 'var(--border-color-primary)',
+        btn: 'var(--border-color-btn)',
       },
 
       transparent: 'transparent',

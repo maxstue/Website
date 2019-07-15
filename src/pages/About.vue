@@ -2,9 +2,9 @@
   <Layout>
     <transition name="fade-button" mode="out-in" v-if="showComponentOne">
       <div class="center_belowTitle">
-        <button class="btn default" @click="toogleComponent">Show text</button>
+        <button class="btn default search-hover:hover" @click="toogleComponent">Show text</button>
         <div class="seperator_line"></div>
-        <button class="btn default" @click="downloadCV">Export CV</button>
+        <button class="btn default search-hover:hover" @click="downloadCV">Export CV</button>
       </div>
     </transition>
 
@@ -15,9 +15,9 @@
 
     <transition name="fade-button" mode="out-in" v-if="!showComponentOne">
       <div class="center_belowTitle">
-        <button class="btn default" @click="toogleComponent">Show Timeline</button>
+        <button class="btn default search-hover:hover" @click="toogleComponent">Show Timeline</button>
         <div class="seperator_line"></div>
-        <button class="btn default" @click="downloadCV">Export CV</button>
+        <button class="btn default search-hover:hover" @click="downloadCV">Export CV</button>
       </div>
     </transition>
   </Layout>
@@ -66,14 +66,16 @@ export default {
   margin-top: 1.5em;
   width: 10%;
   margin: 0em 1em 0em 1em;
+
 }
 
 .btn {
-  box-shadow: inset 0 0 0 1px var(--text-copy-secondary);
+  box-shadow: inset 0 0 0 1px var(--border-color-primary);
   color: inherit !important;
   border-radius: 4px;
   padding: 3px;
   margin: 10px;
+
 }
 
 .fade-enter-active,

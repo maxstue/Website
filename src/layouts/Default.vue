@@ -4,7 +4,7 @@
     :class="theme"
   >
     <!-- Header -->
-    <header class="border-t-14 border-blue-400">
+    <header class="border-t-14 border-color-primary">
       <nav class="container mx-auto flex flex-wrap justify-between items-center py-8">
         <div>
           <g-link v-if="theme === 'theme-light'" to="/">
@@ -64,7 +64,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-blue-400 text-white">
+    <footer class="bg-background-footerHeader text-white">
       <div class="container mx-auto flex flex-col lg:flex-row items-center justify-between py-6">
         <div class="mb-8 lg:mb-0">
           <div>Copyright 2019. All rights reserved. | Maximilian Stümpfl</div>
@@ -157,30 +157,4 @@ export default {
 .fade-enter {
   opacity: 0;
 }
-/* body {
-  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
-}
-
-.layout {
-  max-width: 760px;
-  margin: 0 auto;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  height: 80px;
-}
-
-.nav__link {
-  margin-left: 20px;
-} */
 </style>

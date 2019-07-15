@@ -1,14 +1,17 @@
+
+// #region light
 .theme-light {
     --bg-background-primary: white;
     --bg-background-secondary: #f7fafc;
-    --bg-background-tertiary: #e2e8f0;
-
-    --bg-background-form: white;
 
     --text-copy-primary: #2d3748;
     --text-copy-secondary: #4a5568;
+    --bg-background-fh : #63b3ed;
+    --border-color-primary: #63b3ed;
 
-    --border-border-color-primary: white;
+    --bg-background-tag: #aecce0;
+
+    --btn-border-color: '#4a5568';
 }
 
 .theme-light .search-highlighted {
@@ -18,10 +21,13 @@
 .theme-light .search-hover:hover {
     background: #f0fff4;
 }
+// #endregion
 
-.theme-dark .markdown-body {
-    color: #24292e;
-}
+// #region Dark
+
+// .theme-dark .markdown-body {
+//     color: #24292e;
+// }
 
 .theme-dark .search-highlighted {
     background: #2d3748;
@@ -32,18 +38,22 @@
 }
 
 .theme-dark {
-    --bg-background-primary: #0D2438;
-    --bg-background-secondary: #102C44;
-    --bg-background-tertiary: #1E3951;
-
-    --bg-background-form: #1a202c;
+    --bg-background-primary: rgb(31, 57, 80);
+    --bg-background-secondary: rgb(21, 48, 71);
 
     --text-copy-primary: #cbd5e0;
-    --text-copy-secondary: #e2e8f0;
+    --text-copy-secondary: #2e2f30;
+    --bg-background-fh: #3a9de4;
 
-    --border-border-color-primary: #1a202c;
+    --border-color-primary: #63b3ed;
+
+    --bg-background-tag: #8da5b6;
+
+    --btn-border-color: '#4a5568';
 }
 
 .theme-dark .markdown-body {
     color: #cbd5e0;
 }
+// #endregion
+

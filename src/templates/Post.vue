@@ -19,8 +19,8 @@
           :to="tag.path"
           v-for="tag in $page.post.tags"
           :key="tag.id"
-          class="bg-gray-300 rounded-full px-4 py-2 mr-4 hover:bg-green-300">
-          {{ tag.title }}
+          class="bg-background-tag rounded-full px-4 py-2 mr-4 hover:bg-green-300">
+          <div class="text-copy-secondary">{{ tag.title }}</div>
         </g-link>
       </div>
       <div class="markdown-body mb-8" v-html="$page.post.content" />
